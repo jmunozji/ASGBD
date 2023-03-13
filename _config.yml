@@ -22,17 +22,16 @@ title: ASGBD notes
 email: j.munozjimeno@edu.gva.es
 description: >- # this means to ignore newlines until "baseurl:"
   These are the class notes for 2023-2024 ASGBD module
-baseurl: "/ASGBD" # the subpath of your site, e.g. /blog
-url: "https://jmunozji.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: PpMunozJ
 github_username:  jmunozji
 
 # Build settings
-#theme: minima
-remote_theme: pages-themes/time-machine@v0.2.0
+theme: minima
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
+#  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
