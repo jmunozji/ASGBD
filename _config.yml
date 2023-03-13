@@ -22,8 +22,8 @@ title: ASGBD notes
 email: j.munozjimeno@edu.gva.es
 description: >- # this means to ignore newlines until "baseurl:"
   These are the class notes for 2023-2024 ASGBD module
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/ASGBD" # the subpath of your site, e.g. /blog
+url: "https://jmunozji.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: PpMunozJ
 github_username:  jmunozji
 
