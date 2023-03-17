@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Introduction to DBMS."
-date:   2023-03-12 20:51:06 +0100
+date:   2023-03-17 14:00:00 +0100
 categories:
 ---
 # Functions of the database management system (DBMS).
