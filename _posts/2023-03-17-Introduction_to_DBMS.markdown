@@ -4,6 +4,9 @@ title:  "Introduction to DBMS."
 date:   2023-03-17 14:00:00 +0100
 categories:
 ---
+# Introduction to DMBS.
+Last year, in the Database Management module we learned how to design, create and manipulate databases using SQL DDL (Data Definition Language) and DML (Data Manipulation Language). In this module we will learn how to use the tool that allows us to implement databases, that is a DataBase Management System or DBMS.
+
 # Functions of the database management system (DBMS).
 
 The functions of the database management system (DBMS) are as follows:
