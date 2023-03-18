@@ -50,6 +50,19 @@ We could also make a classification of DBMS according to the number of layers be
 
 - **Single Layer DBMS**: there is only one layer between the user and the database. This layer provides an interface to the user to access the database. The user interacts with the database directly. The database is managed by a single program that provides an interface for the user to manipulate the data. Examples of single-layer DBMS include dBase, FileMaker, and FoxPro.
 
+![SingleLayer](https://jorgesanchez.net/manuales/abd/bases-sgbd-web-resources/image/3.png)
+
 - **Two Layer DBMS**: there are two layers between the user and the database. The first layer is the user interface layer, which provides an interface to the user to access the database. The second layer is the database management layer, which manages the database and provides functions to the user interface layer.  Examples of two-layer DBMS include MySQL, PostgreSQL, Oracle, and SQL Server.
 
+![2layer](https://jorgesanchez.net/manuales/abd/bases-sgbd-web-resources/image/4.png)
+
 - **Three Layer DBMS**: there are three layers between the user and the database. The first layer is the user interface layer, which provides an interface to the user to access the database. The second layer is the application layer, which manages the application and provides functions to the user interface layer. The third layer is the database management layer, which manages the database and provides functions to the application layer. Examples of three-layer DBMS include IBM DB2, SAP Sybase, and Informix.
+
+![3layer](https://jorgesanchez.net/manuales/abd/bases-sgbd-web-resources/image/5.png)
+
+---
+
+## References
+[Manual de Administración de Bases de Datos - Jorge Sanchez.net](https://jorgesanchez.net/manuales/abd/bases-sgbd.html)
+
+[Database Architecture in DBMS: 1-Tier, 2-Tier and 3-Tier - Guru99](https://www.guru99.com/dbms-architecture.html)
