@@ -1,0 +1,37 @@
+---
+layout: post
+title:  "Oracle installation and configuration."
+date:   2023-03-21 14:00:00 +0100
+categories:
+---
+# Oracle installation and configuration.
+
+![OracleIntroduction](../assets/2023-03-21-Oracle_installation_and_configuration/T8_0.png)
+
+# Objectives
+
+Last year in Database Management module, Databases have been designed, translated into the Relational Model, and implemented either in Access or in Oracle. Access to the Database has also been made through the SQL language, both to retrieve information or modify it, and to create the Database itself (the tables).
+
+Practical experience has also been gained in what the client-server architecture in Oracle consists of, but only from the client's perspective.
+
+The objective of this unit will be to install and configure a large Database, such as Oracle. Specifically, these tasks of managing the Database include, among others:
+
+- Know its basic structure.
+- Install the Oracle Server.
+- Start and stop the Database.
+- Organize the physical space where the data is stored.
+- Manage the objects directly.
+
+# Functions of the Database Administrator (DBA)
+
+The Database Administrator (DBA: DataBase Administrator) is the person responsible for the proper functioning of the Database, its installation, and correct operation. Among their functions we can find:
+
+- Installation of the DBMS, and possible updates.
+- System startup and shutdown, although this can be done automatically.
+- Resource allocation: memory, hard disk, ...
+- Authorize access to the DB by creating users who can access the database and specifying to which parts they do it. If there are many users, as many will have the same or similar permissions, they will have to be managed by groups (in Oracle, a ROLE must be created).
+- Administration of the objects of the DB. Although users can create their own objects (tables, views, synonyms), there will be times when the administrator will have to manipulate them directly.
+- DB Backup. These could be divided into partial and total backups. In case of information loss, the administrator will have to recover it.
+- Optimize the system for better performance, both regarding the adjustment of the current system and improvements in hardware and software (tools).
+
+We will see each of these functions throughout the unit, first with a short general description and then specific to Oracle. Even if any of these functions can be done in more than one way, we will try to see them all.
