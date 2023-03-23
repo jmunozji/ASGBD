@@ -103,6 +103,10 @@ We could also include in this section the installation of different help tools b
 
 ## Server installation
 
-> We are going to work with Oracle 11g, an old version of the DBMS, as in the moment of writing these notes, the latest long term release is 19c and the innovation release is 21c. 
+> We are going to work with **Oracle 11g**, an old version of the DBMS, as in the moment of writing these notes[^1], the latest long term release is 19c and the innovation release is 21c. 
+> 
 >The main reason is that its hardware and software requirements are smaller than the newest versions and the DBMS administration concepts we will learn are quite similar.
+
+[^1]: March 2023
+
 

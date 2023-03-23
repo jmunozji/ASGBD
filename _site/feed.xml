@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-03-23T20:29:32+01:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Oracle installation and configuration.</title><link href="http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration.html" rel="alternate" type="text/html" title="Oracle installation and configuration." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration.html"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-03-23T20:43:27+01:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Oracle installation and configuration.</title><link href="http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration.html" rel="alternate" type="text/html" title="Oracle installation and configuration." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration.html"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
 
 <p><img src="../../../assets/Oracle_installation_and_configuration/T8_0.png" alt="OracleIntroduction" /></p>
 
@@ -105,9 +105,19 @@
 
 <h2 id="server-installation">Server installation</h2>
 
-<p>We are going to work with Oracle 11g, an old version of the DBMS, as in the moment of writing these notes, the latest long term release is 19c and the innovation release is 21c.</p>
+<blockquote>
+  <p>We are going to work with <strong>Oracle 11g</strong>, an old version of the DBMS, as in the moment of writing these notes<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>, the latest long term release is 19c and the innovation release is 21c.</p>
 
-<p>The main reason is that its hardware and software requirements are smaller than the newest versions and the DBMS administration concepts we will learn are quite similar.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Oracle installation and configuration.]]></summary></entry><entry><title type="html">Introduction to DBMS.</title><link href="http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS.html" rel="alternate" type="text/html" title="Introduction to DBMS." /><published>2023-03-17T14:00:00+01:00</published><updated>2023-03-17T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS.html"><![CDATA[<h1 id="introduction-to-dmbs">Introduction to DMBS.</h1>
+  <p>The main reason is that its hardware and software requirements are smaller than the newest versions and the DBMS administration concepts we will learn are quite similar.</p>
+</blockquote>
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>March 2023 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[Oracle installation and configuration.]]></summary></entry><entry><title type="html">Introduction to DBMS.</title><link href="http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS.html" rel="alternate" type="text/html" title="Introduction to DBMS." /><published>2023-03-17T14:00:00+01:00</published><updated>2023-03-17T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS.html"><![CDATA[<h1 id="introduction-to-dmbs">Introduction to DMBS.</h1>
 
 <p>Last year, in the Database Management module we learned how to design, create and manipulate databases using SQL DDL (Data Definition Language) and DML (Data Manipulation Language). In this module we will learn how to use the tool that allows us to implement databases, that is a DataBase Management System or DBMS.</p>
 
