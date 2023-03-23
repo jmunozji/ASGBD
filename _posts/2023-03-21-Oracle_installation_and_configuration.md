@@ -6,7 +6,7 @@ categories:
 ---
 # Oracle installation and configuration.
 
-![OracleIntroduction](../assets/2023-03-21-Oracle_installation_and_configuration/T8_0.png)
+![OracleIntroduction](/ASGBD/assets/Oracle_installation_and_configuration/T8_0.png)
 
 # Objectives
 
@@ -37,8 +37,6 @@ The Database Administrator (DBA: DataBase Administrator) is the person responsib
 We will see each of these functions throughout the unit, first with a short general description and then specific to Oracle. Even if any of these functions can be done in more than one way, we will try to see them all.
 
 # Oracle DBMS estructure
-
-# Oracle DBMS Structure
 
 Before exploring the functions of the Administrator in Oracle, it is convenient to know a little about its structure, how it is organized, to be aware of what we are doing.
 
@@ -79,7 +77,7 @@ Therefore, we have a logical subdivision of tables: by users (actually, Oracle u
 
 Each user can define more objects, apart from tables, such as views, index, synonyms (convenient way to refer to a table). All of this will be part of your schema, which by default will be stored in a single TableSpace (except temporary objects).
 
-![TableSpaces](../assets/2023-03-21-Oracle_installation_and_configuration/T8_2_1.png)
+![TableSpaces](/ASGBD/assets/Oracle_installation_and_configuration/T8_2_1.png)
 
 Besides the tablespace data files, there are other files that are kept in the same directory that are also basic. The control file (usually CONTROL01.CTL) is a file where critical information is kept, such as the location of data files. If it was damaged, the instance could not even be booted. As it is so important, it is common to have two identical or even three (CONTROL02.CTL and CONTROL03.CTL)
 
@@ -95,7 +93,7 @@ An ORACLE INSTANCE is a SGA with some system processes (that access it) and a se
 
 The following figure illustrates what instances are:
 
-![Oracle Instances](../assets/2023-03-21-Oracle_installation_and_configuration/T8_2_2.png)
+![Oracle Instances](/ASGBD/assets/Oracle_installation_and_configuration/T8_2_2.png)
 
 # Installation of the DBMS
 

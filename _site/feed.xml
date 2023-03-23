@@ -1,1 +1,237 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-03-13T11:58:35+01:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Module introduction.</title><link href="http://localhost:4000/ASGBD/2023/03/12/Module-introduction.html" rel="alternate" type="text/html" title="Module introduction." /><published>2023-03-12T20:51:06+01:00</published><updated>2023-03-12T20:51:06+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/12/Module-introduction</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/12/Module-introduction.html"><![CDATA[<h1 id="welcome-to-the-module-introduction">Welcome to the module introduction.</h1>]]></content><author><name></name></author><summary type="html"><![CDATA[Welcome to the module introduction.]]></summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-03-23T19:35:23+01:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Oracle installation and configuration.</title><link href="http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration.html" rel="alternate" type="text/html" title="Oracle installation and configuration." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration.html"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
+
+<p><img src="/ASGBD/assets/Oracle_installation_and_configuration/T8_0.png" alt="OracleIntroduction" /></p>
+
+<h1 id="objectives">Objectives</h1>
+
+<p>Last year in Database Management module, Databases have been designed, translated into the Relational Model, and implemented either in Access or in Oracle. Access to the Database has also been made through the SQL language, both to retrieve information or modify it, and to create the Database itself (the tables).</p>
+
+<p>Practical experience has also been gained in what the client-server architecture in Oracle consists of, but only from the client’s perspective.</p>
+
+<p>The objective of this unit will be to install and configure a large Database, such as Oracle. Specifically, these tasks of managing the Database include, among others:</p>
+
+<ul>
+  <li>Know its basic structure.</li>
+  <li>Install the Oracle Server.</li>
+  <li>Start and stop the Database.</li>
+  <li>Organize the physical space where the data is stored.</li>
+  <li>Manage the objects directly.</li>
+</ul>
+
+<h1 id="functions-of-the-database-administrator-dba">Functions of the Database Administrator (DBA)</h1>
+
+<p>The Database Administrator (DBA: DataBase Administrator) is the person responsible for the proper functioning of the Database, its installation, and correct operation. Among their functions we can find:</p>
+
+<ul>
+  <li>Installation of the DBMS, and possible updates.</li>
+  <li>System startup and shutdown, although this can be done automatically.</li>
+  <li>Resource allocation: memory, hard disk, …</li>
+  <li>Authorize access to the DB by creating users who can access the database and specifying to which parts they do it. If there are many users, as many will have the same or similar permissions, they will have to be managed by groups (in Oracle, a ROLE must be created).</li>
+  <li>Administration of the objects of the DB. Although users can create their own objects (tables, views, synonyms), there will be times when the administrator will have to manipulate them directly.</li>
+  <li>DB Backup. These could be divided into partial and total backups. In case of information loss, the administrator will have to recover it.</li>
+  <li>Optimize the system for better performance, both regarding the adjustment of the current system and improvements in hardware and software (tools).</li>
+</ul>
+
+<p>We will see each of these functions throughout the unit, first with a short general description and then specific to Oracle. Even if any of these functions can be done in more than one way, we will try to see them all.</p>
+
+<h1 id="oracle-dbms-estructure">Oracle DBMS estructure</h1>
+
+<p>Before exploring the functions of the Administrator in Oracle, it is convenient to know a little about its structure, how it is organized, to be aware of what we are doing.</p>
+
+<p>In “smaller” DBMSs, such as ACCESS, all the tables of a specific theme (with possible queries, forms, reports, etc.) are stored in a single file. Therefore, a Database, understanding it as a set of related data belonging to a specific “universe,” is saved in a file with an .mdb extension. In DBASE, each table was stored in a file, and the Database was all that was saved in a directory.</p>
+
+<p>In ORACLE, many users can connect (it is therefore a “large” DBMS), and a Database (more specifically an instance, as we will see later) is the set of all the tables created by all users, including the administrators, who will have many tables at their disposal to manage everything.</p>
+
+<p>In this sense, the closest to the conception of a Database as mentioned above (a set of related data belonging to a specific “universe”) in ORACLE are users. It would be absurd to create an entire Database instance, with the work of administering it, for a Database of 10 tables. However, it is very reasonable for a user.</p>
+
+<p>The tables of different users are stored on the hard disk in TABLE SPACES, which are sets of one or more physical files that are usually stored in the directory C:\Oracle\Oradata\nomBD, and the name of the (large) Database could be ORCL.</p>
+
+<p>There are a few predefined table spaces to classify the different tables:</p>
+
+<ul>
+  <li>System table space (system): this is where Oracle stores all the information it needs to manage itself. It’s better not to touch it.</li>
+  <li>Temporary table space (temp): where it stores temporary tables (which serve as partial results).</li>
+  <li>Tools table space (tools): where tables used by different Oracle tools (Forms, Reports, etc.) are stored. If the tools are not installed, it will not be created.</li>
+  <li>User table space (users): where users’ tables are stored.</li>
+  <li>Index table space (index), to store indexes (primary keys and secondary indexes); if they are in a different location than the data, it is more efficient.</li>
+  <li>Rollback table space (rollback): stores information to undo transactions.</li>
+</ul>
+
+<p>These would be the predefined ones, but using the appropriate tools, more table spaces can be created. It would probably be most convenient to create a table space for each large group of users (one for the accounting department, another for administration, etc.).</p>
+
+<p>Each table space can consist of one or more files with a specific size. The name of these files is usually of this type:</p>
+
+<ul>
+  <li>USERS01.DBF (indicating that it is file 1 of the USERS table space, and it will be located in the instance directory; if the name of the instance is ORCL, it will be in: C:\Oracle\Oradata\Orcl).</li>
+</ul>
+
+<p>The administrator must ensure that there is enough space. Thus, suppose all users in a specific department share the DEPA table space. This table space only has one reserved file (DEPA01.DBF) of 20 Mb, and this space is almost entirely occupied. Then a new file (DEPA02.DBF) of 20 Mb can be assigned to the table space, for example. The capacity of the first file</p>
+
+<p>The administrator must ensure that there is enough space. Therefore, let us suppose that all the users of a particular department share the table space DEPA. This table space only has one reserved file (DEPA01.DBF) of 20 Mb, and this space is almost fully occupied. Then, a new file (DEPA02.DBF) of 20 Mb can be assigned to the table space. Alternatively, the capacity of the first file could have been extended. However, it is not convenient to make them excessively large.</p>
+
+<p>In short, table spaces are physical subdivisions of the Database.</p>
+
+<p>Each user, in principle, can only see their own tables, the ones they create, unless we expressly grant permissions (grant). Even different users can give the same names to their tables (it is logical since if I only see mine, I don’t know what name the others have, and I can give a repeated name). Now suppose that a user (U1) grants permission, on their table (T1), to another user. This second user, to be able to access the first user’s table, will have to refer to it like this:</p>
+
+<p>SELECT * FROM U1.T1;</p>
+
+<p>Therefore, we have a logical subdivision of tables: by users (actually, Oracle uses the name SCHEMAS, schema). If I only put the name of the table, I am referring to one of my tables. If I want to refer to someone else’s table (and I have permission to do so), I have to put their name first.</p>
+
+<p>Each user can define more objects, apart from tables, such as views, index, synonyms (convenient way to refer to a table). All of this will be part of your schema, which by default will be stored in a single TableSpace (except temporary objects).</p>
+
+<p><img src="/ASGBD/assets/Oracle_installation_and_configuration/T8_2_1.png" alt="TableSpaces" /></p>
+
+<p>Besides the tablespace data files, there are other files that are kept in the same directory that are also basic. The control file (usually CONTROL01.CTL) is a file where critical information is kept, such as the location of data files. If it was damaged, the instance could not even be booted. As it is so important, it is common to have two identical or even three (CONTROL02.CTL and CONTROL03.CTL)</p>
+
+<p>Other important files are transaction logs, also called “redo” logs (redo log files). There are a minimum of 2 files (REDO01.LOG and REDO02.LOG), although by default 3 are created. The last transactions are saved in them, although you can make it save all transactions since it was created the Database (obviously not in 2 files but in many: it will be the ARCHIVELOG operating mode, which we will see later).</p>
+
+<p>And for the last concept a little introduction. Different processes will want to access the Database. Thus, many users can have a SQL*Plus connection, and others a connection from another tool. Each of these connections is a user process. And in the same way that there are user processes, there are also server processes, which access the Database in order to manage it. More specifically, user processes make requests to server processes and these are the ones that access the data. An example of a server process is the database writer (DBWR) which is responsible for writing the modified data blocks in the database files.</p>
+
+<p>But as memory is much faster than disk, Oracle mounts a kind of cache area to optimize performance. It is the SYSTEM GLOBAL AREA (SGA), which contains 4 fundamental components: Data buffer cache (where the last accessed data is stored), Dictionary cache (where the last dictionary data is stored which have been accessed), Transaction Log Buffer (last updates made) and SQL Cache (where the last SQL commands executed are saved). All processes (except those that need to move physical file information from tablespaces to caches and vice versa) will access the SGA, and not directly to the hard disk. Therefore the SGA is the great communication area of the Oracle. Obviously, it suits us that all or almost all of the SGA is in central memory.</p>
+
+<p>On the other hand, the GLOBAL PROGRAM AREA (PGA) is an area of memory used by a single process that it does not share with any other. There will be a PGA for each process of each user running.</p>
+
+<p>An ORACLE INSTANCE is a SGA with some system processes (that access it) and a set of files (of tablespaces) also associated. In other words, an instance is a “running” Database. Two different instances will have different SGAs, with different system processes, and DIFFERENT DATA FILES. Therefore, for all intents and purposes, two Oracle instances (even if they run on the same machine) are two different Databases, which must be administered separately. The name of the first instance on a machine, by default, is ORCL. All files associated with it (data, control, …) will be saved by default in a directory called C:\ORACLE\ORADATA\ORCL. A second instance on the same machine could be named ORC0 , and all files associated with it could be stored in a directory called C:\ORACLE\ORADATA\ORC0.</p>
+
+<p>The following figure illustrates what instances are:</p>
+
+<p><img src="/ASGBD/assets/Oracle_installation_and_configuration/T8_2_2.png" alt="Oracle Instances" /></p>
+
+<h1 id="installation-of-the-dbms">Installation of the DBMS</h1>
+
+<p>The installation process of the entire DBMS will consist of installing the server, that is, the Database itself, and also installing the clients on those machines that users will use to connect to the Database. It will also be necessary to make the connection between client and server possible.</p>
+
+<p>We could also include in this section the installation of different help tools both on the server and on the clients (as they could be in the case of Oracle Developer, to build applications with forms and reports).</p>
+
+<h2 id="server-installation">Server installation</h2>
+
+<p>We are going to work with Oracle 11g, an old version of the DBMS, as in the moment of writing these notes, the latest long term release is 19c and the innovation release is 21c.</p>
+
+<p>The main reason is that its hardware and software requirements are smaller than the newest versions and the DBMS administration concepts we will learn are quite similar.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Oracle installation and configuration.]]></summary></entry><entry><title type="html">Introduction to DBMS.</title><link href="http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS.html" rel="alternate" type="text/html" title="Introduction to DBMS." /><published>2023-03-17T14:00:00+01:00</published><updated>2023-03-17T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS.html"><![CDATA[<h1 id="introduction-to-dmbs">Introduction to DMBS.</h1>
+
+<p>Last year, in the Database Management module we learned how to design, create and manipulate databases using SQL DDL (Data Definition Language) and DML (Data Manipulation Language). In this module we will learn how to use the tool that allows us to implement databases, that is a DataBase Management System or DBMS.</p>
+
+<h1 id="functions-of-the-database-management-system-dbms">Functions of the database management system (DBMS).</h1>
+
+<p>The functions of the database management system (DBMS) are as follows:</p>
+
+<ul>
+  <li>
+    <p><strong>Data storage and retrieval</strong>: The DBMS is responsible for storing and retrieving data from the database. It provides a mechanism for creating, reading, updating, and deleting data.</p>
+  </li>
+  <li>
+    <p><strong>Concurrency control</strong>: The DBMS must ensure that multiple users can access the database at the same time without interfering with each other. To do this, the DBMS uses concurrency control techniques to ensure that each user can work with the data safely.</p>
+  </li>
+  <li>
+    <p><strong>Integrity control</strong>: The DBMS is responsible for maintaining the integrity of the data in the database. This means that the data must be accurate and consistent at all times. The DBMS must ensure that the data is not corrupted or becomes inaccurate due to system failures or human errors.</p>
+  </li>
+  <li>
+    <p><strong>Security control</strong>: The DBMS is responsible for ensuring that the data in the database is protected against unauthorized access. This includes user authentication, authorization of database access, and implementation of security policies.</p>
+  </li>
+</ul>
+
+<h1 id="components">Components.</h1>
+
+<p>We could summarize the components of a DBMS are as follows:</p>
+
+<ul>
+  <li>
+    <p><strong>Database engine</strong>: It is the core of the DBMS. It controls all database operations, including data storage and retrieval, concurrency control, integrity control, and security control.</p>
+  </li>
+  <li>
+    <p><strong>Query language</strong>: Allows users to perform queries and data manipulations in the database. Examples of query languages are SQL, PL/SQL, T-SQL, etc.</p>
+  </li>
+  <li>
+    <p><strong>User interface</strong>: Allows users to interact with the DBMS. It can be a graphical user interface (GUI), a command line, an API, etc.</p>
+  </li>
+  <li>
+    <p><strong>Administration tools</strong>: Allow database administrators to manage the database and perform tasks such as creating and modifying tables, assigning user permissions, performing backups, etc.</p>
+  </li>
+</ul>
+
+<h1 id="types">Types.</h1>
+
+<p>There are different types of DBMS, among which are:</p>
+
+<ul>
+  <li>
+    <p>Relational DBMS: Store data in relational tables and use SQL as query language. Examples of relational DBMS are Oracle, MySQL, Microsoft SQL Server, etc.</p>
+  </li>
+  <li>
+    <p>NoSQL DBMS: Do not use relational tables to store data. Instead, they use non-relational data structures such as documents, graphs, or columns. Examples of NoSQL DBMS are MongoDB, Cassandra, Couchbase, etc.</p>
+  </li>
+  <li>
+    <p>Desktop DBMS: Are DBMS that run on a desktop or laptop computer. Examples of desktop DBMS are Microsoft Access, FileMaker Pro, etc.</p>
+  </li>
+  <li>
+    <p>Cloud DBMS: Are DBMS that run in the cloud and are accessible over the Internet. Examples of cloud DBMS are Amazon RDS, Microsoft Azure SQL Database, Google Cloud SQL, etc.</p>
+  </li>
+</ul>
+
+<h1 id="dbms-architecture">DBMS Architecture.</h1>
+
+<p>We could also make a classification of DBMS according to the number of layers between the user and the database. There are three types of DBMS (Database Management System):</p>
+
+<ul>
+  <li><strong>Single Layer DBMS</strong>: there is only one layer between the user and the database. This layer provides an interface to the user to access the database. The user interacts with the database directly. The database is managed by a single program that provides an interface for the user to manipulate the data. Examples of single-layer DBMS include dBase, FileMaker, and FoxPro.</li>
+</ul>
+
+<p><img src="https://jorgesanchez.net/manuales/abd/bases-sgbd-web-resources/image/3.png" alt="SingleLayer" /></p>
+
+<ul>
+  <li><strong>Two Layer DBMS</strong>: there are two layers between the user and the database. The first layer is the user interface layer, which provides an interface to the user to access the database. The second layer is the database management layer, which manages the database and provides functions to the user interface layer.  Examples of two-layer DBMS include MySQL, PostgreSQL, Oracle, and SQL Server.</li>
+</ul>
+
+<p><img src="https://jorgesanchez.net/manuales/abd/bases-sgbd-web-resources/image/4.png" alt="2layer" /></p>
+
+<ul>
+  <li><strong>Three Layer DBMS</strong>: there are three layers between the user and the database. The first layer is the user interface layer, which provides an interface to the user to access the database. The second layer is the application layer, which manages the application and provides functions to the user interface layer. The third layer is the database management layer, which manages the database and provides functions to the application layer. Examples of three-layer DBMS include IBM DB2, SAP Sybase, and Informix.</li>
+</ul>
+
+<p><img src="https://jorgesanchez.net/manuales/abd/bases-sgbd-web-resources/image/5.png" alt="3layer" /></p>
+
+<h1 id="ansisparc-architecture-of-a-dbms">ANSI/SPARC architecture of a DBMS.</h1>
+
+<p>The <strong>ANSI/SPARC architecture</strong> of a DBMS stands for the <em>American National Standards Institute/Standards Planning And Requirements Committee</em> architecture of a Database Management System. It is a conceptual framework for designing and developing database management systems that was proposed by the ANSI in the 1970s.</p>
+
+<p>The ANSI/SPARC architecture defines three levels of abstraction in a DBMS:</p>
+
+<ul>
+  <li>
+    <p><strong>External level</strong>: This is the level at which individual user views of the data are defined. Each user can have their own view of the data that is tailored to their specific needs. This level is concerned with the user interface and the way in which data is presented to users.</p>
+  </li>
+  <li>
+    <p><strong>Conceptual level</strong>: This is the level at which the overall logical structure of the database is defined. It defines the relationships between data elements and how they are organized into tables or other structures. This level is concerned with the overall design of the database and the relationships between data elements.</p>
+  </li>
+  <li>
+    <p><strong>Internal level</strong>: This is the level at which the physical implementation of the database is defined. It defines how the data is stored on disk or other storage media and how it is accessed and retrieved by the system. This level is concerned with the technical details of the database implementation.</p>
+  </li>
+</ul>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/d/df/4-2_ANSI-SPARC_three_level_architecture.jpg" alt="ANSI/SPARC architecture" /></p>
+
+<p>The ANSI/SPARC architecture also defines several components that make up a DBMS:</p>
+
+<ul>
+  <li>
+    <p><strong>Data definition language (DDL)</strong>: This is the language used to define the structure of the database and its relationships.</p>
+  </li>
+  <li>
+    <p><strong>Data manipulation language (DML)</strong>: This is the language used to insert, update, and delete data in the database.</p>
+  </li>
+  <li>
+    <p><strong>Data control language (DCL)</strong>: This is the language used to control access to the database, including the creation of user accounts and setting access privileges.</p>
+  </li>
+  <li>
+    <p><strong>Query language</strong>: This is the language used to retrieve data from the database.</p>
+  </li>
+</ul>
+
+<p>The ANSI/SPARC architecture provides a clear separation between the different levels of abstraction in a DBMS, which allows for greater flexibility and scalability in database design and implementation.</p>
+
+<hr />
+
+<h2 id="references">References</h2>
+<p><a href="https://jorgesanchez.net/manuales/abd/bases-sgbd.html">Manual de Administración de Bases de Datos - Jorge Sanchez.net</a></p>
+
+<p><a href="https://www.guru99.com/dbms-architecture.html">Database Architecture in DBMS: 1-Tier, 2-Tier and 3-Tier - Guru99</a></p>]]></content><author><name></name></author><summary type="html"><![CDATA[Introduction to DMBS.]]></summary></entry></feed>
