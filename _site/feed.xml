@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-03-23T20:43:27+01:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Oracle installation and configuration.</title><link href="http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration.html" rel="alternate" type="text/html" title="Oracle installation and configuration." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/21/Oracle_installation_and_configuration.html"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-03-25T16:44:59+01:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Oracle DBMS basics.</title><link href="http://localhost:4000/ASGBD/2023/03/21/Oracle_DBMS_basics.html" rel="alternate" type="text/html" title="Oracle DBMS basics." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/21/Oracle_DBMS_basics</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/21/Oracle_DBMS_basics.html"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
 
-<p><img src="../../../assets/Oracle_installation_and_configuration/T8_0.png" alt="OracleIntroduction" /></p>
+<p><img src="../../../assets/Oracle_DBMS_basics/T8_0.png" alt="OracleIntroduction" /></p>
 
 <h1 id="objectives">Objectives</h1>
 
@@ -79,7 +79,7 @@
 
 <p>Each user can define more objects, apart from tables, such as views, index, synonyms (convenient way to refer to a table). All of this will be part of your schema, which by default will be stored in a single TableSpace (except temporary objects).</p>
 
-<p><img src="../../../assets/Oracle_installation_and_configuration/T8_2_1.png" alt="TableSpaces" /></p>
+<p><img src="../../../assets/Oracle_DBMS_basics/T8_2_1.png" alt="TableSpaces" /></p>
 
 <p>Besides the tablespace data files, there are other files that are kept in the same directory that are also basic. The control file (usually CONTROL01.CTL) is a file where critical information is kept, such as the location of data files. If it was damaged, the instance could not even be booted. As it is so important, it is common to have two identical or even three (CONTROL02.CTL and CONTROL03.CTL)</p>
 
@@ -95,7 +95,7 @@
 
 <p>The following figure illustrates what instances are:</p>
 
-<p><img src="../../../assets/Oracle_installation_and_configuration/T8_2_2.png" alt="Oracle Instances" /></p>
+<p><img src="../../../assets/Oracle_DBMS_basics/T8_2_2.png" alt="Oracle Instances" /></p>
 
 <h1 id="installation-of-the-dbms">Installation of the DBMS</h1>
 

@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Oracle installation and configuration."
+title:  "Oracle DBMS basics."
 date:   2023-03-21 14:00:00 +0100
 categories:
 ---
 # Oracle installation and configuration.
 
-![OracleIntroduction](../../../assets/Oracle_installation_and_configuration/T8_0.png)
+![OracleIntroduction](../../../assets/Oracle_DBMS_basics/T8_0.png)
 
 # Objectives
 
@@ -77,7 +77,7 @@ Therefore, we have a logical subdivision of tables: by users (actually, Oracle u
 
 Each user can define more objects, apart from tables, such as views, index, synonyms (convenient way to refer to a table). All of this will be part of your schema, which by default will be stored in a single TableSpace (except temporary objects).
 
-![TableSpaces](../../../assets/Oracle_installation_and_configuration/T8_2_1.png)
+![TableSpaces](../../../assets/Oracle_DBMS_basics/T8_2_1.png)
 
 Besides the tablespace data files, there are other files that are kept in the same directory that are also basic. The control file (usually CONTROL01.CTL) is a file where critical information is kept, such as the location of data files. If it was damaged, the instance could not even be booted. As it is so important, it is common to have two identical or even three (CONTROL02.CTL and CONTROL03.CTL)
 
@@ -93,7 +93,7 @@ An ORACLE INSTANCE is a SGA with some system processes (that access it) and a se
 
 The following figure illustrates what instances are:
 
-![Oracle Instances](../../../assets/Oracle_installation_and_configuration/T8_2_2.png)
+![Oracle Instances](../../../assets/Oracle_DBMS_basics/T8_2_2.png)
 
 # Installation of the DBMS
 
