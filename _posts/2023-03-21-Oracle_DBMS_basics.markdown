@@ -95,18 +95,4 @@ The following figure illustrates what instances are:
 
 ![Oracle Instances](../../../assets/Oracle_DBMS_basics/T8_2_2.png)
 
-# Installation of the DBMS
-
-The installation process of the entire DBMS will consist of installing the server, that is, the Database itself, and also installing the clients on those machines that users will use to connect to the Database. It will also be necessary to make the connection between client and server possible.
-
-We could also include in this section the installation of different help tools both on the server and on the clients (as they could be in the case of Oracle Developer, to build applications with forms and reports).
-
-## Server installation
-
-> We are going to work with **Oracle 11g**, an old version of the DBMS, as in the moment of writing these notes[^1], the latest long term release is 19c and the innovation release is 21c. 
-> 
->The main reason is that its hardware and software requirements are smaller than the newest versions and the DBMS administration concepts we will learn are quite similar.
-
-[^1]: March 2023
-
 
