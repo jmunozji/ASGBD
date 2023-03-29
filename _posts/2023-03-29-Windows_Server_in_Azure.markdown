@@ -8,7 +8,7 @@ categories:
 
 In this note we will see how to create a Windows Server 2012. We will use that machine to install our Oracle Database afterwards.
 
-First of all, we have to access the [Azure Portal](https://portal.azure.com/) using our Azure for Students Account.
+First, we have to access the [Azure Portal](https://portal.azure.com/) using our Azure for Students Account.
 
 In the next images we will display with a red square the options that have to be changed or revised. You can forget about the rest of available options.
 
@@ -57,7 +57,7 @@ Make it read/write.
 
 ![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/11.png)
 
-Finally we create the virtual network. Let's keep the default options for now. We can "Revise and create" the resources now.
+Finally, we create the virtual network. Let's keep the default options for now. We can "Revise and create" the resources now.
 
 ![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/12.png)
 
@@ -106,3 +106,5 @@ It will then ask for the user and password.
 ![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/22.png)
 
 And the connection will be stablished.
+
+# Initialize the data disk
