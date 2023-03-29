@@ -188,4 +188,3 @@ Now you can go to "This PC" and find unit E:
 ![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/31.png)
 
 We will use this unit to install our Software and keep our data.
-
