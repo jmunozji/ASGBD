@@ -75,6 +75,10 @@ It could be a good idea to configure the automatic shutdown so the machine is sh
 
 Once the VM is created we will see all the information about it. It is interesting to check the private and public IP addresses, as we will need them to connect to the VM.
 
+> ATENTION!
+> 
+> The public IP address will could change. Make note of the new IP each time you try to connect to the VM.
+
 We can now connect to our Windows Server using RDP protocol. It allows us to make a graphical connection to the machine. Make click on "Connect" and then select RDP.
 
 ![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/16.png)
@@ -107,4 +111,7 @@ It will then ask for the user and password.
 
 And the connection will be stablished.
 
-# Initialize the data disk
+## Initialize the data disk
+
+If you remember, we created a data disk, but it is not automanically initialized. Let's say that we installed in the VM, but the OS does not now about it. We have to initialize and format it before we can use it.
+
