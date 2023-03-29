@@ -123,21 +123,21 @@ Download the software for Windows from [Microsoft Store](https://apps.microsoft.
 
 Yo can quicky connect to the VM downloading the RDP file from azure and them make doble click on it.
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-4.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/22-4.png)
 
 But I advise to do it this other way to create a shared folder first. Open Microsoft Remote Desktop and go to menu "Connections -> Add PC".
 
 Then follow the steps. Fill in PC name with the public IP address of the VM. In User account create a new one for the "administrador" user previously created.
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-5.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/22-5.png)
 
 In "Folders" tab, create a shared folder with your computer. First create the local folder. Then, use the "+" button to add it.
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-2.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/22-2.png)
 
 Next time you open the connection, you will find a network drive in your VM which is the local folder in your PC. It is a very convenient way to share files between both systems.
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-3.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/22-3.png)
 
 Once all configuration is finished you will find it in the main page each time you open the application.
 
@@ -145,7 +145,7 @@ Once all configuration is finished you will find it in the main page each time y
 >
 > The VM public IP will change. You will have to edit the created connection each time you want to connect to the VM, but you will just have to change the IP address, keeping the rest of the configuration.
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-1.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/22-1.png)
 
 ## Initialize the data disk
 
