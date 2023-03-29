@@ -111,7 +111,44 @@ It will then ask for the user and password.
 
 And the connection will be stablished.
 
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/18_1.png)
+
 ## Initialize the data disk
 
 If you remember, we created a data disk, but it is not automanically initialized. Let's say that we installed in the VM, but the OS does not now about it. We have to initialize and format it before we can use it.
 
+Go to "Startup" icon.
+
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/23.png)
+
+Select "Administrative Tools".
+
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/24.png)
+
+Look for "Computer Management".
+
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/25.png)
+
+Then Storage - Disk Management.
+
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/26.png)
+
+You will get a dialog box saying that a no initialized disk has been found. Follow the wizard to initialize it. Just follow the screens.
+
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/27.png)
+
+Once initialized right click on Disk 2 and select "New simple volume".
+
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/28.png)
+
+Follow the wizard and give the volume the label "Data"
+
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/29.png)
+
+Check that the volume is properly formated.
+
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/30.png)
+
+Now you can go to "This PC" and find unit E:
+
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/31.png)
