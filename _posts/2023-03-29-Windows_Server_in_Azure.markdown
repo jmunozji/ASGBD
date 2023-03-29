@@ -6,38 +6,38 @@ categories:
 ---
 # Windows Server in Azure
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/01.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/01.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/02.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/02.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/03.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/03.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/04.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/04.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/05.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/05.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/06.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/06.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/07.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/07.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/08.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/08.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/09.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/09.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/10.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/10.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/11.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/11.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/12.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/12.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/13.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/13.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/14.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/14.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/15.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/15.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/16.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/16.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/17.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/17.png)
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/18.png)
+![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/18.png)
