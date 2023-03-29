@@ -113,6 +113,40 @@ And the connection will be stablished.
 
 ![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/18_1.png)
 
+## Connection using Microsoft Remote Desktop
+
+You can use Microsoft Remote Desktop in Windows and Mac.
+
+One advantange of this software is that it allows us to share folders between our computer and the Azure Virtual Machine, the same way we share folders in a virtualization software (such as VirtualBox).
+
+Download the software for Windows from [Microsoft Store](https://apps.microsoft.com/) or for Mac in the [App Store](https://www.apple.com/es/app-store/).
+
+Yo can quicky connect to the VM downloading the RDP file from azure and them make doble click on it.
+
+![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-4.png)
+
+But I advise to do it this other way to create a shared folder first. Open Microsoft Remote Desktop and go to menu "Connections -> Add PC".
+
+Then follow the steps. Fill in PC name with the public IP address of the VM. In User account create a new one for the "administrador" user previously created.
+
+![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-5.png)
+
+In "Folders" tab, create a shared folder with your computer. First create the local folder. Then, use the "+" button to add it.
+
+![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-2.png)
+
+Next time you open the connection, you will find a network drive in your VM which is the local folder in your PC. It is a very convenient way to share files between both systems.
+
+![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-3.png)
+
+Once all configuration is finished you will find it in the main page each time you open the application.
+
+> REMEMBER
+>
+> The VM public IP will change. You will have to edit the created connection each time you want to connect to the VM, but you will just have to change the IP address, keeping the rest of the configuration.
+
+![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-1.png)
+
 ## Initialize the data disk
 
 If you remember, we created a data disk, but it is not automanically initialized. Let's say that we installed in the VM, but the OS does not now about it. We have to initialize and format it before we can use it.
@@ -152,3 +186,6 @@ Check that the volume is properly formated.
 Now you can go to "This PC" and find unit E:
 
 ![WindowsServerInstallation](../../../assets/Windows_Server_in_Azure/31.png)
+
+We will use this unit to install our Software and keep our data.
+
