@@ -3,7 +3,7 @@ layout: post
 title:  "Oracle installation."
 date:   2023-03-25 14:00:00 +0100
 categories: Unit1
-permalink: /:categories/:title
+permalink: /:categories/:title.html
 ---
 # Installation of the DBMS
 

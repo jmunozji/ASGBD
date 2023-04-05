@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-05T19:42:58+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-05T20:56:45+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
 
 <p>In this note we will see how to create a Windows Server 2012. We will use that machine to install our Oracle Database afterwards.</p>
 
@@ -184,7 +184,7 @@
 
 <p><img src="../assets/Windows_Server_in_Azure/31.png" alt="WindowsServerInstallation" /></p>
 
-<p>We will use this unit to install our Software and keep our data.</p>]]></content><author><name></name></author><category term="Unit0" /><summary type="html"><![CDATA[Windows Server in Azure]]></summary></entry><entry><title type="html">Oracle installation.</title><link href="http://localhost:4000/ASGBD/unit1/Oracle_installation" rel="alternate" type="text/html" title="Oracle installation." /><published>2023-03-25T14:00:00+01:00</published><updated>2023-03-25T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Oracle_installation</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Oracle_installation"><![CDATA[<h1 id="installation-of-the-dbms">Installation of the DBMS</h1>
+<p>We will use this unit to install our Software and keep our data.</p>]]></content><author><name></name></author><category term="Unit0" /><summary type="html"><![CDATA[Windows Server in Azure]]></summary></entry><entry><title type="html">Oracle installation.</title><link href="http://localhost:4000/ASGBD/unit1/Oracle_installation.html" rel="alternate" type="text/html" title="Oracle installation." /><published>2023-03-25T14:00:00+01:00</published><updated>2023-03-25T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Oracle_installation</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Oracle_installation.html"><![CDATA[<h1 id="installation-of-the-dbms">Installation of the DBMS</h1>
 
 <p>The installation process of the entire DBMS will consist of installing the server, that is, the Database itself, and also installing the clients on those machines that users will use to connect to the Database. It will also be necessary to make the connection between client and server possible.</p>
 
@@ -380,7 +380,7 @@
       <p>March 2023 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="Unit1" /><summary type="html"><![CDATA[Installation of the DBMS]]></summary></entry><entry><title type="html">Oracle DBMS basics.</title><link href="http://localhost:4000/ASGBD/unit1/Oracle_DBMS_basics" rel="alternate" type="text/html" title="Oracle DBMS basics." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Oracle_DBMS_basics</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Oracle_DBMS_basics"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
+</div>]]></content><author><name></name></author><category term="Unit1" /><summary type="html"><![CDATA[Installation of the DBMS]]></summary></entry><entry><title type="html">Oracle DBMS basics.</title><link href="http://localhost:4000/ASGBD/unit1/Oracle_DBMS_basics.html" rel="alternate" type="text/html" title="Oracle DBMS basics." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Oracle_DBMS_basics</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Oracle_DBMS_basics.html"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
 
 <p><img src="../assets/Oracle_DBMS_basics/T8_0.png" alt="OracleIntroduction" /></p>
 
@@ -477,7 +477,83 @@
 
 <p>The following figure illustrates what instances are:</p>
 
-<p><img src="../assets/Oracle_DBMS_basics/T8_2_2.png" alt="Oracle Instances" /></p>]]></content><author><name></name></author><category term="Unit1" /><summary type="html"><![CDATA[Oracle installation and configuration.]]></summary></entry><entry><title type="html">Introduction to DBMS.</title><link href="http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS" rel="alternate" type="text/html" title="Introduction to DBMS." /><published>2023-03-17T14:00:00+01:00</published><updated>2023-03-17T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS"><![CDATA[<h1 id="introduction-to-dmbs">Introduction to DMBS.</h1>
+<p><img src="../assets/Oracle_DBMS_basics/T8_2_2.png" alt="Oracle Instances" /></p>]]></content><author><name></name></author><category term="Unit1" /><summary type="html"><![CDATA[Oracle installation and configuration.]]></summary></entry><entry><title type="html">Unit 0. Introduction.</title><link href="http://localhost:4000/ASGBD/unit0/Unit0_Introduction.html" rel="alternate" type="text/html" title="Unit 0. Introduction." /><published>2023-03-17T14:00:00+01:00</published><updated>2023-03-17T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit0/Unit0_Introduction</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Unit0_Introduction.html"><![CDATA[<h1 id="introduction">Introduction</h1>
+
+<p>In this unit we will focus on creating the environment we will use in future units to install the Oracle database server and clients, and perform all the tasks we will learn. We could use a real server, should we have one. But that is not likely the case, so it is better and less expensive to work with virtual machines.</p>
+
+<p>Among all the possible options you can choose between the following two:</p>
+
+<ul>
+  <li>VMs in VirtualBox</li>
+  <li>VM in Microsoft Azure Cloud</li>
+</ul>
+
+<p>If you decide to use VirtualBox, I will provide you the .ova files to create the virtual machines in your computer. If you decide to use Ms Azure, I will show you how to create the VM in Azure cloud. Each solution has advantages and disadvantages. The following table shows you some of them to help you take the decision:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>VirtualBox</th>
+      <th>Azure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>PC Hard disk usage</td>
+      <td>High</td>
+      <td>Very low</td>
+    </tr>
+    <tr>
+      <td>PC CPU requirement</td>
+      <td>High</td>
+      <td>Very low</td>
+    </tr>
+    <tr>
+      <td>Network usage</td>
+      <td>Low</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Use from different PC’s</td>
+      <td>Difficult</td>
+      <td>Very easy</td>
+    </tr>
+    <tr>
+      <td>Number of simultaneous running VM</td>
+      <td>Low</td>
+      <td>Unlimited</td>
+    </tr>
+    <tr>
+      <td>Velocity to create a VM</td>
+      <td>Low</td>
+      <td>Very High</td>
+    </tr>
+    <tr>
+      <td>Usage charges</td>
+      <td>No</td>
+      <td>Yes when Azure for students credit (100$) finished</td>
+    </tr>
+    <tr>
+      <td>Platform complexity</td>
+      <td>Low</td>
+      <td>High</td>
+    </tr>
+    <tr>
+      <td>Know how to use it to get a job</td>
+      <td>Medium</td>
+      <td>Very high</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As a conclusion I would say that if you don’t have a very powerful PC, Azure would be your choice. In other cases, just decide considering which characteristics are more important to you: disk usage, mobility, learning new systems…</p>
+
+<h1 id="unit-pages">Unit pages</h1>
+
+<ul>
+  <li><a href="../unit0/Windows_Server_in_Azure.html">Windows Server in Azure</a></li>
+</ul>]]></content><author><name></name></author><category term="Unit0" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Introduction to DBMS.</title><link href="http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS.html" rel="alternate" type="text/html" title="Introduction to DBMS." /><published>2023-03-17T14:00:00+01:00</published><updated>2023-03-17T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS.html"><![CDATA[<h1 id="introduction-to-dmbs">Introduction to DMBS.</h1>
 
 <p>Last year, in the Database Management module we learned how to design, create and manipulate databases using SQL DDL (Data Definition Language) and DML (Data Manipulation Language). In this module we will learn how to use the tool that allows us to implement databases, that is a DataBase Management System or DBMS.</p>
 

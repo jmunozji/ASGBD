@@ -3,7 +3,7 @@ layout: post
 title:  "Windows Server in Azure"
 date:   2023-03-29 10:00:00 +0100
 categories: Unit0
-permalink: /:categories/:title
+permalink: /:categories/:title.html
 ---
 # Windows Server in Azure
 
