@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-05T19:35:16+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-05T19:39:28+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
 
 <p>In this note we will see how to create a Windows Server 2012. We will use that machine to install our Oracle Database afterwards.</p>
 
@@ -94,7 +94,7 @@
 
 <p><img src="../assets/Windows_Server_in_Azure/19.png" alt="WindowsServerInstallation" /></p>
 
-<p>We can configure some things, such as the screen resolution or keyboard.</p>
+<p>We can configure some things, such as the screen resolution or keyboard. You can also make a folder in your hard disk available to your VM, the same way you use shared folders in VirtualBox.</p>
 
 <p><img src="../assets/Windows_Server_in_Azure/20.png" alt="WindowsServerInstallation" /></p>
 
