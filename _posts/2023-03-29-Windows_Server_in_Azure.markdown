@@ -100,7 +100,7 @@ Just select protocol RDP and the public IP address.
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/19.png)
 
-We can configure some things, such as the screen resolution or keyboard.
+We can configure some things, such as the screen resolution or keyboard. You can also make a folder in your hard disk available to your VM, the same way you use shared folders in VirtualBox.
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/20.png)
 
@@ -189,4 +189,3 @@ Now you can go to "This PC" and find unit E:
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/31.png)
 
 We will use this unit to install our Software and keep our data.
-
