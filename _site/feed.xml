@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-05T19:39:28+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-05T19:42:58+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
 
 <p>In this note we will see how to create a Windows Server 2012. We will use that machine to install our Oracle Database afterwards.</p>
 
@@ -184,7 +184,7 @@
 
 <p><img src="../assets/Windows_Server_in_Azure/31.png" alt="WindowsServerInstallation" /></p>
 
-<p>We will use this unit to install our Software and keep our data.</p>]]></content><author><name></name></author><category term="Unit0" /><summary type="html"><![CDATA[Windows Server in Azure]]></summary></entry><entry><title type="html">Oracle installation.</title><link href="http://localhost:4000/ASGBD/2023/03/25/Oracle_installation.html" rel="alternate" type="text/html" title="Oracle installation." /><published>2023-03-25T14:00:00+01:00</published><updated>2023-03-25T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/25/Oracle_installation</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/25/Oracle_installation.html"><![CDATA[<h1 id="installation-of-the-dbms">Installation of the DBMS</h1>
+<p>We will use this unit to install our Software and keep our data.</p>]]></content><author><name></name></author><category term="Unit0" /><summary type="html"><![CDATA[Windows Server in Azure]]></summary></entry><entry><title type="html">Oracle installation.</title><link href="http://localhost:4000/ASGBD/unit1/Oracle_installation" rel="alternate" type="text/html" title="Oracle installation." /><published>2023-03-25T14:00:00+01:00</published><updated>2023-03-25T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Oracle_installation</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Oracle_installation"><![CDATA[<h1 id="installation-of-the-dbms">Installation of the DBMS</h1>
 
 <p>The installation process of the entire DBMS will consist of installing the server, that is, the Database itself, and also installing the clients on those machines that users will use to connect to the Database. It will also be necessary to make the connection between client and server possible.</p>
 
@@ -209,55 +209,55 @@
 
 <p>When we start the machine it should look like the following image.</p>
 
-<p><img src="../../../assets/Oracle_installation/1.png" alt="Clean Machine" /></p>
+<p><img src="../assets/Oracle_installation/1.png" alt="Clean Machine" /></p>
 
 <p>Next you have to download the two .zip files with Oracle Database 11g Release 2. Unzip both files on the Desktop so that it looks like this:</p>
 
-<p><img src="../../../assets/Oracle_installation/2.png" alt="Clean Machine" /></p>
+<p><img src="../assets/Oracle_installation/2.png" alt="Clean Machine" /></p>
 
 <p>Launch the setup.exe file to begin the installation.</p>
 
-<p><img src="../../../assets/Oracle_installation/3.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/3.png" alt="Clean machine" /></p>
 
 <p>Do not provide any data on this screen and ignore the warning message.</p>
 
-<p><img src="../../../assets/Oracle_installation/4.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/4.png" alt="Clean machine" /></p>
 
 <p>Select the first option so that after installing the Oracle software a database is configured.</p>
 
-<p><img src="../../../assets/Oracle_installation/5.png" alt="Clean Machine" /></p>
+<p><img src="../assets/Oracle_installation/5.png" alt="Clean Machine" /></p>
 
 <p>Choose the “Desktop Class” option since we are not going to work in production.</p>
 
-<p><img src="../../../assets/Oracle_installation/6.png" alt="Clean Machine" /></p>
+<p><img src="../assets/Oracle_installation/6.png" alt="Clean Machine" /></p>
 
 <p>At this point the only thing we are going to fill in is the “Global Database Name”. Fill it with “orcl.w2008”. As Administrator password and its confirmation use “system”.</p>
 
-<p><img src="../../../assets/Oracle_installation/7.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/7.png" alt="Clean machine" /></p>
 
 <p>Ignore the warning message and proceed with the installation.</p>
 
-<p><img src="../../../assets/Oracle_installation/8.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/8.png" alt="Clean machine" /></p>
 
 <p>This informative screen helps us check that the installation options are correct. Click “Finish” to begin the installation process.</p>
 
-<p><img src="../../../assets/Oracle_installation/9.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/9.png" alt="Clean machine" /></p>
 
 <p>At this point the installation process begins…</p>
 
-<p><img src="../../../assets/Oracle_installation/10.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/10.png" alt="Clean machine" /></p>
 
 <p>When finished, the “Database Configuration Wizard” creates the instance that we had previously configured.</p>
 
-<p><img src="../../../assets/Oracle_installation/11.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/11.png" alt="Clean machine" /></p>
 
 <p>When the wizard finishes, we press “Password Management…” to edit and unlock a few users.</p>
 
-<p><img src="../../../assets/Oracle_installation/12.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/12.png" alt="Clean machine" /></p>
 
 <p>We change the password of the user “SYS” and of the user “SYSTEM”. In both cases we use “system” as the password.</p>
 
-<p><img src="../../../assets/Oracle_installation/13.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/13.png" alt="Clean machine" /></p>
 
 <p>We unlock the user “SCOTT” and the user “HR”.</p>
 
@@ -266,21 +266,21 @@
   <li>HR: password “hr”.</li>
 </ul>
 
-<p><img src="../../../assets/Oracle_installation/14.png" alt="Clean Machine" /></p>
+<p><img src="../assets/Oracle_installation/14.png" alt="Clean Machine" /></p>
 
 <p>We ignore the warning about password strength.</p>
 
-<p><img src="../../../assets/Oracle_installation/15.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/15.png" alt="Clean machine" /></p>
 
 <p>We press “OK” and we will have finished the installation.</p>
 
-<p><img src="../../../assets/Oracle_installation/16.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/16.png" alt="Clean machine" /></p>
 
 <p>In earlier versions of Oracle the main tool to manage it was a program called <em>Enterprise Manager Database Control</em>. In Oracle 11g it is no longer an application but we can access this tool as a web page and it is called <em>Oracle Enterprise Manager 11g</em>. In this last screen we see the url that we must put in the browser to be able to manage the created database (orcl).</p>
 
 <p>The address is: https://localhost:1158/em</p>
 
-<p><img src="../../../assets/Oracle_installation/17.png" alt="Clean machine" /></p>
+<p><img src="../assets/Oracle_installation/17.png" alt="Clean machine" /></p>
 
 <p>We will get into this tool in the next section.</p>
 
@@ -343,13 +343,13 @@
 <h3 id="command-line-mode">Command Line Mode</h3>
 <p>The first way, which has traditionally been used, is in command line mode by giving SQL commands from SQL Plus (or similar). The connection to SYSTEM will be as usual, while the connection to SYS, as we have to do a Connect as SYSDBA.</p>
 
-<p><img src="../../../assets/Oracle_installation/SQLPlusSystem.png" alt="Connectassystem" /></p>
+<p><img src="../assets/Oracle_installation/SQLPlusSystem.png" alt="Connectassystem" /></p>
 
-<p><img src="../../../assets/Oracle_installation/SQLPlusSys.png" alt="Connectassys" /></p>
+<p><img src="../assets/Oracle_installation/SQLPlusSys.png" alt="Connectassys" /></p>
 
 <p>We could also make the connection as SYS once we have entered SQL*Plus, by doing CONNECT SYS AS SYSDBA. In the image, we have an example where we first connect as SYSTEM, and then as SYS. Note that they will not have access to the same things.</p>
 
-<p><img src="../../../assets/Oracle_installation/SQLPlusSystemSys.png" alt="Connectassys" /></p>
+<p><img src="../assets/Oracle_installation/SQLPlusSystemSys.png" alt="Connectassys" /></p>
 
 <h3 id="oem---oracle-enterprise-manager">OEM - Oracle Enterprise Manager</h3>
 <p>The other way, which appeared starting from version 7.3, is the Oracle Enterprise Manager (OEM). It is the most convenient way to manage the DBMS, with a completely graphical environment. In the version we use (11g), we will do almost everything from the Enterprise Manager Console.</p>
@@ -359,30 +359,30 @@
 <ul>
   <li>Start menu
     <ul>
-      <li><img src="../../../assets/Oracle_installation/oem.png" alt="StartMenu" /></li>
+      <li><img src="../assets/Oracle_installation/oem.png" alt="StartMenu" /></li>
     </ul>
   </li>
   <li>Browser
     <ul>
-      <li><img src="../../../assets/Oracle_installation/oem_browser.png" alt="Browser" /></li>
+      <li><img src="../assets/Oracle_installation/oem_browser.png" alt="Browser" /></li>
     </ul>
   </li>
 </ul>
 
 <p>Just remember that if you try to log in as System you do it as a normal user but, if you log in as Sys you have to do it as Sysdba.</p>
 
-<p><img src="../../../assets/Oracle_installation/connectassystem.png" alt="Connectassystem" /></p>
+<p><img src="../assets/Oracle_installation/connectassystem.png" alt="Connectassystem" /></p>
 
-<p><img src="../../../assets/Oracle_installation/connectassysdba.png" alt="Connectassysdba" /></p>
+<p><img src="../assets/Oracle_installation/connectassysdba.png" alt="Connectassysdba" /></p>
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1" role="doc-endnote">
       <p>March 2023 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><summary type="html"><![CDATA[Installation of the DBMS]]></summary></entry><entry><title type="html">Oracle DBMS basics.</title><link href="http://localhost:4000/ASGBD/2023/03/21/Oracle_DBMS_basics.html" rel="alternate" type="text/html" title="Oracle DBMS basics." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/21/Oracle_DBMS_basics</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/21/Oracle_DBMS_basics.html"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
+</div>]]></content><author><name></name></author><category term="Unit1" /><summary type="html"><![CDATA[Installation of the DBMS]]></summary></entry><entry><title type="html">Oracle DBMS basics.</title><link href="http://localhost:4000/ASGBD/unit1/Oracle_DBMS_basics" rel="alternate" type="text/html" title="Oracle DBMS basics." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Oracle_DBMS_basics</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Oracle_DBMS_basics"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
 
-<p><img src="../../../assets/Oracle_DBMS_basics/T8_0.png" alt="OracleIntroduction" /></p>
+<p><img src="../assets/Oracle_DBMS_basics/T8_0.png" alt="OracleIntroduction" /></p>
 
 <h1 id="objectives">Objectives</h1>
 
@@ -461,7 +461,7 @@
 
 <p>Each user can define more objects, apart from tables, such as views, index, synonyms (convenient way to refer to a table). All of this will be part of your schema, which by default will be stored in a single TableSpace (except temporary objects).</p>
 
-<p><img src="../../../assets/Oracle_DBMS_basics/T8_2_1.png" alt="TableSpaces" /></p>
+<p><img src="../assets/Oracle_DBMS_basics/T8_2_1.png" alt="TableSpaces" /></p>
 
 <p>Besides the tablespace data files, there are other files that are kept in the same directory that are also basic. The control file (usually CONTROL01.CTL) is a file where critical information is kept, such as the location of data files. If it was damaged, the instance could not even be booted. As it is so important, it is common to have two identical or even three (CONTROL02.CTL and CONTROL03.CTL)</p>
 
@@ -477,7 +477,7 @@
 
 <p>The following figure illustrates what instances are:</p>
 
-<p><img src="../../../assets/Oracle_DBMS_basics/T8_2_2.png" alt="Oracle Instances" /></p>]]></content><author><name></name></author><summary type="html"><![CDATA[Oracle installation and configuration.]]></summary></entry><entry><title type="html">Introduction to DBMS.</title><link href="http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS.html" rel="alternate" type="text/html" title="Introduction to DBMS." /><published>2023-03-17T14:00:00+01:00</published><updated>2023-03-17T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS</id><content type="html" xml:base="http://localhost:4000/ASGBD/2023/03/17/Introduction_to_DBMS.html"><![CDATA[<h1 id="introduction-to-dmbs">Introduction to DMBS.</h1>
+<p><img src="../assets/Oracle_DBMS_basics/T8_2_2.png" alt="Oracle Instances" /></p>]]></content><author><name></name></author><category term="Unit1" /><summary type="html"><![CDATA[Oracle installation and configuration.]]></summary></entry><entry><title type="html">Introduction to DBMS.</title><link href="http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS" rel="alternate" type="text/html" title="Introduction to DBMS." /><published>2023-03-17T14:00:00+01:00</published><updated>2023-03-17T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS"><![CDATA[<h1 id="introduction-to-dmbs">Introduction to DMBS.</h1>
 
 <p>Last year, in the Database Management module we learned how to design, create and manipulate databases using SQL DDL (Data Definition Language) and DML (Data Manipulation Language). In this module we will learn how to use the tool that allows us to implement databases, that is a DataBase Management System or DBMS.</p>
 
@@ -604,4 +604,4 @@
 <h2 id="references">References</h2>
 <p><a href="https://jorgesanchez.net/manuales/abd/bases-sgbd.html">Manual de Administración de Bases de Datos - Jorge Sanchez.net</a></p>
 
-<p><a href="https://www.guru99.com/dbms-architecture.html">Database Architecture in DBMS: 1-Tier, 2-Tier and 3-Tier - Guru99</a></p>]]></content><author><name></name></author><summary type="html"><![CDATA[Introduction to DMBS.]]></summary></entry></feed>
+<p><a href="https://www.guru99.com/dbms-architecture.html">Database Architecture in DBMS: 1-Tier, 2-Tier and 3-Tier - Guru99</a></p>]]></content><author><name></name></author><category term="Unit1" /><summary type="html"><![CDATA[Introduction to DMBS.]]></summary></entry></feed>
