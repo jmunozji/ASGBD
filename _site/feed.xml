@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-05T20:56:45+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-06T19:00:12+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
 
 <p>In this note we will see how to create a Windows Server 2012. We will use that machine to install our Oracle Database afterwards.</p>
 
@@ -18,7 +18,7 @@
 
 <p><img src="../assets/Windows_Server_in_Azure/03.png" alt="WindowsServerInstallation" /></p>
 
-<p>Let’s use [smalldisk] Windows Server 2012 R2 Datacenter, that is the minimum Server available.</p>
+<p>Let’s use Windows Server 2012 R2 Datacenter, that is the minimum Server available.</p>
 
 <p><img src="../assets/Windows_Server_in_Azure/04.png" alt="WindowsServerInstallation" /></p>
 
@@ -26,29 +26,17 @@
 
 <p><img src="../assets/Windows_Server_in_Azure/05.png" alt="WindowsServerInstallation" /></p>
 
-<p>Configure the “Project details” as shown. That is enough for our needs while keeping the costs down.</p>
+<p>Configure the “Project details” as shown. That is enough for our needs while keeping the costs down. The size can put up the costs quite a bit. Make sure that you select the proposed size. Don’t keep the default.</p>
 
 <p><img src="../assets/Windows_Server_in_Azure/06.png" alt="WindowsServerInstallation" /></p>
 
-<p>The disk size can put up the costs quite a bit. Make sure that you select the proposed disk size. Don’t keep the default.</p>
+<p>Fill in the administrator account</p>
 
 <p><img src="../assets/Windows_Server_in_Azure/07.png" alt="WindowsServerInstallation" /></p>
 
 <p>Now we create the disk where the OS will be installed.</p>
 
 <p><img src="../assets/Windows_Server_in_Azure/08.png" alt="WindowsServerInstallation" /></p>
-
-<p>In Azure the OS disk is used to install the OS, but is not big enough to further installations. We have to create a “data disk” where we will install our Oracle.</p>
-
-<p>Follow the images to create it.</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/09.png" alt="WindowsServerInstallation" /></p>
-
-<p><img src="../assets/Windows_Server_in_Azure/10.png" alt="WindowsServerInstallation" /></p>
-
-<p>Make it read/write.</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/11.png" alt="WindowsServerInstallation" /></p>
 
 <p>Finally, we create the virtual network. Let’s keep the default options for now. We can “Revise and create” the resources now.</p>
 
@@ -68,15 +56,15 @@
 
 <p>Once the VM is created we will see all the information about it. It is interesting to check the private and public IP addresses, as we will need them to connect to the VM.</p>
 
+<p><img src="../assets/Windows_Server_in_Azure/16.png" alt="WindowsServerInstallation" /></p>
+
 <blockquote>
   <p>ATENTION!</p>
 
-  <p>The public IP address will could change. Make note of the new IP each time you try to connect to the VM.</p>
+  <p>The public IP address could change. Make note of the new IP each time you try to connect to the VM.</p>
 </blockquote>
 
 <p>We can now connect to our Windows Server using RDP protocol. It allows us to make a graphical connection to the machine. Make click on “Connect” and then select RDP.</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/16.png" alt="WindowsServerInstallation" /></p>
 
 <p><img src="../assets/Windows_Server_in_Azure/17.png" alt="WindowsServerInstallation" /></p>
 
@@ -112,7 +100,7 @@
 
 <p>You can use Microsoft Remote Desktop in Windows and Mac.</p>
 
-<p>One advantange of this software is that it allows us to share folders between our computer and the Azure Virtual Machine, the same way we share folders in a virtualization software (such as VirtualBox).</p>
+<p>As in KRDC we can have share folders between our computer and the Azure Virtual Machine, the same way we share folders in a virtualization software (such as VirtualBox).</p>
 
 <p>Download the software for Windows from <a href="https://apps.microsoft.com/">Microsoft Store</a> or for Mac in the <a href="https://www.apple.com/es/app-store/">App Store</a>.</p>
 
@@ -142,49 +130,7 @@
   <p>The VM public IP will change. You will have to edit the created connection each time you want to connect to the VM, but you will just have to change the IP address, keeping the rest of the configuration.</p>
 </blockquote>
 
-<p><img src="../assets/Windows_Server_in_Azure/22-1.png" alt="WindowsServerInstallation" /></p>
-
-<h2 id="initialize-the-data-disk">Initialize the data disk</h2>
-
-<p>If you remember, we created a data disk, but it is not automanically initialized. Let’s say that we installed in the VM, but the OS does not now about it. We have to initialize and format it before we can use it.</p>
-
-<p>Go to “Startup” icon.</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/23.png" alt="WindowsServerInstallation" /></p>
-
-<p>Select “Administrative Tools”.</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/24.png" alt="WindowsServerInstallation" /></p>
-
-<p>Look for “Computer Management”.</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/25.png" alt="WindowsServerInstallation" /></p>
-
-<p>Then Storage - Disk Management.</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/26.png" alt="WindowsServerInstallation" /></p>
-
-<p>You will get a dialog box saying that a no initialized disk has been found. Follow the wizard to initialize it. Just follow the screens.</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/27.png" alt="WindowsServerInstallation" /></p>
-
-<p>Once initialized right click on Disk 2 and select “New simple volume”.</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/28.png" alt="WindowsServerInstallation" /></p>
-
-<p>Follow the wizard and give the volume the label “Data”</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/29.png" alt="WindowsServerInstallation" /></p>
-
-<p>Check that the volume is properly formated.</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/30.png" alt="WindowsServerInstallation" /></p>
-
-<p>Now you can go to “This PC” and find unit E:</p>
-
-<p><img src="../assets/Windows_Server_in_Azure/31.png" alt="WindowsServerInstallation" /></p>
-
-<p>We will use this unit to install our Software and keep our data.</p>]]></content><author><name></name></author><category term="Unit0" /><summary type="html"><![CDATA[Windows Server in Azure]]></summary></entry><entry><title type="html">Oracle installation.</title><link href="http://localhost:4000/ASGBD/unit1/Oracle_installation.html" rel="alternate" type="text/html" title="Oracle installation." /><published>2023-03-25T14:00:00+01:00</published><updated>2023-03-25T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Oracle_installation</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Oracle_installation.html"><![CDATA[<h1 id="installation-of-the-dbms">Installation of the DBMS</h1>
+<p><img src="../assets/Windows_Server_in_Azure/22-1.png" alt="WindowsServerInstallation" /></p>]]></content><author><name></name></author><category term="Unit0" /><summary type="html"><![CDATA[Windows Server in Azure]]></summary></entry><entry><title type="html">Oracle installation.</title><link href="http://localhost:4000/ASGBD/unit1/Oracle_installation.html" rel="alternate" type="text/html" title="Oracle installation." /><published>2023-03-25T14:00:00+01:00</published><updated>2023-03-25T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Oracle_installation</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Oracle_installation.html"><![CDATA[<h1 id="installation-of-the-dbms">Installation of the DBMS</h1>
 
 <p>The installation process of the entire DBMS will consist of installing the server, that is, the Database itself, and also installing the clients on those machines that users will use to connect to the Database. It will also be necessary to make the connection between client and server possible.</p>
 
@@ -549,10 +495,52 @@
 
 <p>As a conclusion I would say that if you don’t have a very powerful PC, Azure would be your choice. In other cases, just decide considering which characteristics are more important to you: disk usage, mobility, learning new systems…</p>
 
-<h1 id="unit-pages">Unit pages</h1>
+<p>In any case you are going to need a Windows Server to install the Oracle 11g DBMS. In a real environment the DMBS is installed in a machine inside a data center or in the cloud. The DBMS administrators rarely connect directly to this server, but they access the DBMS remotely. Thus, we will learn to connect to the DMBS from a different PC.</p>
+
+<p>Depending on your PC operating system and the availability of the client programs for it, you can decide to install the client programs in your own PC or create a client VM to install these programs. Therefore we will need:</p>
+
+<ul>
+  <li>Windows Server 2008 or higher</li>
+  <li>Windows 7 or higher as client (optional as client)</li>
+</ul>
+
+<h2 id="vms-in-virtualbox">VM’s in VirtualBox</h2>
+
+<p>At this point you might know quite well how to work with VirtualBox. If you decide to use this system, you have to create these virtual machines:</p>
+
+<ul>
+  <li>Windows Server 2008</li>
+  <li>Windows 7 (optional as client)</li>
+</ul>
+
+<p>You can find the .ova files <a href="https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Etr345tDiSlDsyGdSrelkZIBSFHwZSd1TLmdrYH9Ov8dEw?e=Dev4Br">here</a>.</p>
+
+<p>Create both machines, configure them with “bridged network” and create a shared folder with your host machine to easily change files between them.</p>
+
+<h2 id="vms-in-ms-azure">VM’s in Ms Azure</h2>
+
+<p>If you decide to use Ms Azure, we can use newer versions of the operatint systems, as they are available in the platform. In this case we will use:</p>
+
+<ul>
+  <li>Windows Server 2012</li>
+  <li>Windows 10 (optional as client)</li>
+</ul>
+
+<p>In the following post you have all the information you need to install the Windows Server:</p>
 
 <ul>
   <li><a href="../unit0/Windows_Server_in_Azure.html">Windows Server in Azure</a></li>
+</ul>
+
+<p>To install the Windows 10 client, just follow the same steps that for the Server but select the following options:</p>
+
+<ul>
+  <li>Resource group: DBMS (the one previously created)</li>
+  <li>VM name: dbms-win10client</li>
+  <li>Image: Windows 10 Pro, version 21H2 - x64 Gen2</li>
+  <li>Size: Standard_DS1_v2 - 1 vcpu, 3,5</li>
+  <li>Virtual network/subnet: 
+dbms-winserver2012-oracle-vnet/default (the one previously created)</li>
 </ul>]]></content><author><name></name></author><category term="Unit0" /><summary type="html"><![CDATA[Introduction]]></summary></entry><entry><title type="html">Introduction to DBMS.</title><link href="http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS.html" rel="alternate" type="text/html" title="Introduction to DBMS." /><published>2023-03-17T14:00:00+01:00</published><updated>2023-03-17T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit1/Introduction_to_DBMS.html"><![CDATA[<h1 id="introduction-to-dmbs">Introduction to DMBS.</h1>
 
 <p>Last year, in the Database Management module we learned how to design, create and manipulate databases using SQL DDL (Data Definition Language) and DML (Data Manipulation Language). In this module we will learn how to use the tool that allows us to implement databases, that is a DataBase Management System or DBMS.</p>

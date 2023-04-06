@@ -25,7 +25,7 @@ Select "Windows Server"
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/03.png)
 
-Let's use \[smalldisk\] Windows Server 2012 R2 Datacenter, that is the minimum Server available.
+Let's use Windows Server 2012 R2 Datacenter, that is the minimum Server available.
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/04.png)
 
@@ -33,30 +33,17 @@ In the next screen, make sure that the "Azure for Students" suscription is selec
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/05.png)
 
-Configure the "Project details" as shown. That is enough for our needs while keeping the costs down.
+Configure the "Project details" as shown. That is enough for our needs while keeping the costs down. The size can put up the costs quite a bit. Make sure that you select the proposed size. Don't keep the default.
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/06.png)
 
-The disk size can put up the costs quite a bit. Make sure that you select the proposed disk size. Don't keep the default.
+Fill in the administrator account
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/07.png)
 
 Now we create the disk where the OS will be installed.
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/08.png)
-
-In Azure the OS disk is used to install the OS, but is not big enough to further installations. We have to create a "data disk" where we will install our Oracle. 
-
-Follow the images to create it.
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/09.png)
-
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/10.png)
-
-Make it read/write.
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/11.png)
 
 Finally, we create the virtual network. Let's keep the default options for now. We can "Revise and create" the resources now.
 
@@ -76,13 +63,13 @@ It could be a good idea to configure the automatic shutdown so the machine is sh
 
 Once the VM is created we will see all the information about it. It is interesting to check the private and public IP addresses, as we will need them to connect to the VM.
 
+![WindowsServerInstallation](../assets/Windows_Server_in_Azure/16.png)
+
 > ATENTION!
 > 
-> The public IP address will could change. Make note of the new IP each time you try to connect to the VM.
+> The public IP address could change. Make note of the new IP each time you try to connect to the VM.
 
 We can now connect to our Windows Server using RDP protocol. It allows us to make a graphical connection to the machine. Make click on "Connect" and then select RDP.
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/16.png)
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/17.png)
 
@@ -118,7 +105,7 @@ And the connection will be stablished.
 
 You can use Microsoft Remote Desktop in Windows and Mac.
 
-One advantange of this software is that it allows us to share folders between our computer and the Azure Virtual Machine, the same way we share folders in a virtualization software (such as VirtualBox).
+As in KRDC we can have share folders between our computer and the Azure Virtual Machine, the same way we share folders in a virtualization software (such as VirtualBox).
 
 Download the software for Windows from [Microsoft Store](https://apps.microsoft.com/) or for Mac in the [App Store](https://www.apple.com/es/app-store/).
 
@@ -148,44 +135,3 @@ Once all configuration is finished you will find it in the main page each time y
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/22-1.png)
 
-## Initialize the data disk
-
-If you remember, we created a data disk, but it is not automanically initialized. Let's say that we installed in the VM, but the OS does not now about it. We have to initialize and format it before we can use it.
-
-Go to "Startup" icon.
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/23.png)
-
-Select "Administrative Tools".
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/24.png)
-
-Look for "Computer Management".
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/25.png)
-
-Then Storage - Disk Management.
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/26.png)
-
-You will get a dialog box saying that a no initialized disk has been found. Follow the wizard to initialize it. Just follow the screens.
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/27.png)
-
-Once initialized right click on Disk 2 and select "New simple volume".
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/28.png)
-
-Follow the wizard and give the volume the label "Data"
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/29.png)
-
-Check that the volume is properly formated.
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/30.png)
-
-Now you can go to "This PC" and find unit E:
-
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/31.png)
-
-We will use this unit to install our Software and keep our data.

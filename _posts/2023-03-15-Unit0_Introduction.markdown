@@ -59,3 +59,12 @@ If you decide to use Ms Azure, we can use newer versions of the operatint system
 In the following post you have all the information you need to install the Windows Server:
 
 - [Windows Server in Azure](../unit0/Windows_Server_in_Azure.html)
+
+To install the Windows 10 client, just follow the same steps that for the Server but select the following options:
+
+- Resource group: DBMS (the one previously created)
+- VM name: dbms-win10client
+- Image: Windows 10 Pro, version 21H2 - x64 Gen2
+- Size: Standard_DS1_v2 - 1 vcpu, 3,5
+- Virtual network/subnet: 
+dbms-winserver2012-oracle-vnet/default (the one previously created)
