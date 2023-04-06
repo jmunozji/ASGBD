@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Oracle installation."
+title:  "Unit 2. Oracle installation."
 date:   2023-03-25 14:00:00 +0100
-categories: Unit1
+categories: Unit2
 permalink: /:categories/:title.html
 ---
 # Installation of the DBMS

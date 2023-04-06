@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Oracle DBMS basics."
+title:  "Unit 2. Oracle DBMS basics."
 date:   2023-03-21 14:00:00 +0100
-categories: Unit1
+categories: Unit2
 permalink: /:categories/:title.html
 ---
 # Oracle installation and configuration.
