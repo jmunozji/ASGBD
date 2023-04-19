@@ -136,7 +136,7 @@ Depending on the administration task, we will connect as one or the other, alway
 
 ## Tools to manage the DBMS
 
-There are two ways to manage Oracle databases.
+There are three ways to manage Oracle databases.
 
 ### Command Line Mode
 The first way, which has traditionally been used, is in command line mode by giving SQL commands from SQL Plus (or similar). The connection to SYSTEM will be as usual, while the connection to SYS, as we have to do a Connect as SYSDBA.
@@ -165,3 +165,35 @@ Just remember that if you try to log in as System you do it as a normal user but
 ![Connectassystem](../assets/Oracle_installation/connectassystem.png)
 
 ![Connectassysdba](../assets/Oracle_installation/connectassysdba.png)
+
+## SQL Developer
+
+We will usually install this tool on a different machine, not in the server, but in our test environment we will install it first on the server to learn how it works, and then install it on a different machine.
+
+First, we have to download the last version from oracle web page. We can find it [here](https://www.oracle.com/database/sqldeveloper/).
+
+We select the "Windows 64-bit with JDK 11 included" as it has the necessary Java version included.
+
+In our server we open the download page and we get the install program. We need an Oracle account. You can also get it [here](https://gvaedu-my.sharepoint.com/:u:/g/personal/j_munozjimeno_edu_gva_es/EW7zaEInRcVOsssCFIKMNF4B2DkhCYH4QKfy0vo1G24GoA?e=79DWXN), even though it might not be the last available version.
+
+![SQLDeveloper](../assets/Oracle_installation/SQLDeveloper01.png)
+
+This archive includes both SQL Developer and an embedded copy of the Java 11 Development Kit (JDK). Simply extract the zip to a fresh directory and run the sqldeveloper.exe in the top directory. The EXE is configured to run the embedded JDK by default.
+
+You can put it in ""C:\Program Files\Oracle\sqldeveloper" and create a shortcut in the Desktop for easy access.
+
+To connect to the server just double click on the .exe file or the created shortcut. When it opens you will see this.
+
+![SQLDeveloper](../assets/Oracle_installation/SQLDeveloper02.png)
+
+Let's make a connection to the server as user SYSTEM. First click on yhe "+" to create a new connection.
+
+![SQLDeveloper](../assets/Oracle_installation/SQLDeveloper03.png)
+
+Then fill in the necessary information (pay attention to the SID, as we have to change it for "orcl" that is the one we defined during the installation process). Then click on "Test" button and check that you get the "Status: Success".
+
+![SQLDeveloper](../assets/Oracle_installation/SQLDeveloper04.png)
+
+Then you can press the connect button to connect to the server. Check that the connection has been stablished.
+
+![SQLDeveloper](../assets/Oracle_installation/SQLDeveloper05.png)
