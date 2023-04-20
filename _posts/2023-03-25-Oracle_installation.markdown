@@ -184,7 +184,11 @@ This archive includes both SQL Developer and an embedded copy of the Java 11 Dev
 thenthen
 You can put it in ""C:\Program Files\Oracle\sqldeveloper" and create a shortcut in the Desktop for easy access.
 
-To connect to the server just double click on the .exe file or the created shortcut. When it opens you will see this.
+To connect to the server just double click on the .exe file or the created shortcut. 
+
+> If you are on a Windows 2008 Server you might get an "*API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL*" error. To solve it just download and install Visual C++ for Windows. You can find it [here](https://www.microsoft.com/es-es/download/details.aspx?id=48145).
+
+When it opens you will see this.
 
 ![SQLDeveloper](../assets/Oracle_installation/SQLDeveloper02.png)
 
