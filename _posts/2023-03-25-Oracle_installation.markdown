@@ -21,16 +21,16 @@ We could also include in this section the installation of different help tools b
 
 Before we start we will need 
 
-- Windows Server 2008 (64 bits) OS
-- Oracle 11g Serfer for Windows
+- Windows Server (64 bits) OS (2008 or higher)
+- Oracle 11g Server for Windows
 
-You can download a VirtualBox .ova virtual machine and the Oracle 11g Server in 2 .zip archives [here.](https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Etr345tDiSlDsyGdSrelkZIBSFHwZSd1TLmdrYH9Ov8dEw?e=OI7f1l)
+You can download a VirtualBox .ova virtual machine and the Oracle 11g Server [here.](https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Etr345tDiSlDsyGdSrelkZIBSFHwZSd1TLmdrYH9Ov8dEw?e=OI7f1l)
 
-When we start the machine it should look like the following image.
+When we start the machine it should look similar the following image.
 
 ![Clean Machine](../assets/Oracle_installation/1.png)
 
-Next you have to download the two .zip files with Oracle Database 11g Release 2. Unzip both files on the Desktop so that it looks like this:
+Next you have to download the .zip file with Oracle Database 11g Release 2. Unzip it on the Desktop so that it looks like this:
 
 ![Clean Machine](../assets/Oracle_installation/2.png)
 
@@ -89,7 +89,9 @@ We ignore the warning about password strength.
 
 ![Clean machine](../assets/Oracle_installation/15.png)
 
-We press "OK" and we will have finished the installation.
+Take note of all the information provided in this screen, as you will need it later. The SID (System IDentifyer) is orcl and wi will later need it to connect to the database.
+
+We press "Accept" and we will have finished the installation.
 
 ![Clean machine](../assets/Oracle_installation/16.png)
 
@@ -101,7 +103,7 @@ The address is: https://localhost:1158/em
 
 We will get into this tool in the next section.
 
-> *Orace Enterprise Manager 11g* uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. You will have to find out how to enable them in the browser you select.
+> *Orace Enterprise Manager 11g* uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. You will have to find out how to enable them in the browser you select. In Mozilla Firefox last versions you can learn how to do it [here](https://support.mozilla.org/en-US/questions/1101896).
 
 ### After the installation
 
@@ -114,7 +116,7 @@ Once the installation is completed, we will have, among others, the following el
   - Configuration and Migrations Tools
       - Database Configuration Assistant. Allows us to create new instances of databases, delete them, or modify the configuration of an existing one.
       - Database Upgrade Assistant. Assistant for upgrading instances from previous versions of Oracle to the current one.
-      - Oracle Administration Assistant for Windows. Assistant for configuring the Oracle Management Server, a tool that will allow us to administer not only our server but also others on the network.
+      - Oracle Administration Assistant for Windows. Assistant for confOKiguring the Oracle Management Server, a tool that will allow us to administer not only our server but also others on the network.
       - Net Configuration Assistant. For connecting to the server and making the server "listen" to requests.
       - Net Manager. It also allows us to configure network-related things.
 - Oracle Installation Products
@@ -168,7 +170,7 @@ Just remember that if you try to log in as System you do it as a normal user but
 
 ## SQL Developer
 
-We will usually install this tool on a different machine, not in the server, but in our test environment we will install it first on the server to learn how it works, and then install it on a different machine.
+We will usually install this tool on a different machine, not in the server, but in our test environment we will install it first on the server to learn how it works, and later install it on a different machine.
 
 First, we have to download the last version from oracle web page. We can find it [here](https://www.oracle.com/database/sqldeveloper/).
 
@@ -179,7 +181,7 @@ In our server we open the download page and we get the install program. We need 
 ![SQLDeveloper](../assets/Oracle_installation/SQLDeveloper01.png)
 
 This archive includes both SQL Developer and an embedded copy of the Java 11 Development Kit (JDK). Simply extract the zip to a fresh directory and run the sqldeveloper.exe in the top directory. The EXE is configured to run the embedded JDK by default.
-
+thenthen
 You can put it in ""C:\Program Files\Oracle\sqldeveloper" and create a shortcut in the Desktop for easy access.
 
 To connect to the server just double click on the .exe file or the created shortcut. When it opens you will see this.
