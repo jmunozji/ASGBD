@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-06T19:10:21+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-24T13:03:37+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
 
 <p>In this note we will see how to create a Windows Server 2012. We will use that machine to install our Oracle Database afterwards.</p>
 
@@ -147,17 +147,17 @@
 <p>Before we start we will need</p>
 
 <ul>
-  <li>Windows Server 2008 (64 bits) OS</li>
-  <li>Oracle 11g Serfer for Windows</li>
+  <li>Windows Server (64 bits) OS (2008 or higher)</li>
+  <li>Oracle 11g Server for Windows</li>
 </ul>
 
-<p>You can download a VirtualBox .ova virtual machine and the Oracle 11g Server in 2 .zip archives <a href="https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Etr345tDiSlDsyGdSrelkZIBSFHwZSd1TLmdrYH9Ov8dEw?e=OI7f1l">here.</a></p>
+<p>You can download a VirtualBox .ova virtual machine and the Oracle 11g Server <a href="https://gvaedu-my.sharepoint.com/:f:/g/personal/j_munozjimeno_edu_gva_es/Etr345tDiSlDsyGdSrelkZIBSFHwZSd1TLmdrYH9Ov8dEw?e=OI7f1l">here.</a></p>
 
-<p>When we start the machine it should look like the following image.</p>
+<p>When we start the machine it should look similar the following image.</p>
 
 <p><img src="../assets/Oracle_installation/1.png" alt="Clean Machine" /></p>
 
-<p>Next you have to download the two .zip files with Oracle Database 11g Release 2. Unzip both files on the Desktop so that it looks like this:</p>
+<p>Next you have to download the .zip file with Oracle Database 11g Release 2. Unzip it on the Desktop so that it looks like this:</p>
 
 <p><img src="../assets/Oracle_installation/2.png" alt="Clean Machine" /></p>
 
@@ -218,7 +218,9 @@
 
 <p><img src="../assets/Oracle_installation/15.png" alt="Clean machine" /></p>
 
-<p>We press “OK” and we will have finished the installation.</p>
+<p>Take note of all the information provided in this screen, as you will need it later. The SID (System IDentifyer) is orcl and wi will later need it to connect to the database.</p>
+
+<p>We press “Accept” and we will have finished the installation.</p>
 
 <p><img src="../assets/Oracle_installation/16.png" alt="Clean machine" /></p>
 
@@ -231,7 +233,7 @@
 <p>We will get into this tool in the next section.</p>
 
 <blockquote>
-  <p><em>Orace Enterprise Manager 11g</em> uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. You will have to find out how to enable them in the browser you select.</p>
+  <p><em>Orace Enterprise Manager 11g</em> uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. You will have to find out how to enable them in the browser you select. In Mozilla Firefox last versions you can learn how to do it <a href="https://support.mozilla.org/en-US/questions/1101896">here</a>.</p>
 </blockquote>
 
 <h3 id="after-the-installation">After the installation</h3>
@@ -251,7 +253,7 @@
         <ul>
           <li>Database Configuration Assistant. Allows us to create new instances of databases, delete them, or modify the configuration of an existing one.</li>
           <li>Database Upgrade Assistant. Assistant for upgrading instances from previous versions of Oracle to the current one.</li>
-          <li>Oracle Administration Assistant for Windows. Assistant for configuring the Oracle Management Server, a tool that will allow us to administer not only our server but also others on the network.</li>
+          <li>Oracle Administration Assistant for Windows. Assistant for confOKiguring the Oracle Management Server, a tool that will allow us to administer not only our server but also others on the network.</li>
           <li>Net Configuration Assistant. For connecting to the server and making the server “listen” to requests.</li>
           <li>Net Manager. It also allows us to configure network-related things.</li>
         </ul>
@@ -284,7 +286,7 @@
 
 <h2 id="tools-to-manage-the-dbms">Tools to manage the DBMS</h2>
 
-<p>There are two ways to manage Oracle databases.</p>
+<p>There are three ways to manage Oracle databases.</p>
 
 <h3 id="command-line-mode">Command Line Mode</h3>
 <p>The first way, which has traditionally been used, is in command line mode by giving SQL commands from SQL Plus (or similar). The connection to SYSTEM will be as usual, while the connection to SYS, as we have to do a Connect as SYSDBA.</p>
@@ -320,6 +322,44 @@
 <p><img src="../assets/Oracle_installation/connectassystem.png" alt="Connectassystem" /></p>
 
 <p><img src="../assets/Oracle_installation/connectassysdba.png" alt="Connectassysdba" /></p>
+
+<h2 id="sql-developer">SQL Developer</h2>
+
+<p>We will usually install this tool on a different machine, not in the server, but in our test environment we will install it first on the server to learn how it works, and later install it on a different machine.</p>
+
+<p>First, we have to download the last version from oracle web page. We can find it <a href="https://www.oracle.com/database/sqldeveloper/">here</a>.</p>
+
+<p>We select the “Windows 64-bit with JDK 11 included” as it has the necessary Java version included.</p>
+
+<p>In our server we open the download page and we get the install program. We need an Oracle account. You can also get it <a href="https://gvaedu-my.sharepoint.com/:u:/g/personal/j_munozjimeno_edu_gva_es/EW7zaEInRcVOsssCFIKMNF4B2DkhCYH4QKfy0vo1G24GoA?e=79DWXN">here</a>, even though it might not be the last available version.</p>
+
+<p><img src="../assets/Oracle_installation/SQLDeveloper01.png" alt="SQLDeveloper" /></p>
+
+<p>This archive includes both SQL Developer and an embedded copy of the Java 11 Development Kit (JDK). Simply extract the zip to a fresh directory and run the sqldeveloper.exe in the top directory. The EXE is configured to run the embedded JDK by default.
+thenthen
+You can put it in ““C:\Program Files\Oracle\sqldeveloper” and create a shortcut in the Desktop for easy access.</p>
+
+<p>To connect to the server just double click on the .exe file or the created shortcut.</p>
+
+<blockquote>
+  <p>If you are on a Windows 2008 Server you might get an “<em>API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL</em>” error. To solve it just download and install Visual C++ for Windows. You can find it <a href="https://www.microsoft.com/es-es/download/details.aspx?id=48145">here</a>.</p>
+</blockquote>
+
+<p>When it opens you will see this.</p>
+
+<p><img src="../assets/Oracle_installation/SQLDeveloper02.png" alt="SQLDeveloper" /></p>
+
+<p>Let’s make a connection to the server as user SYSTEM. First click on yhe “+” to create a new connection.</p>
+
+<p><img src="../assets/Oracle_installation/SQLDeveloper03.png" alt="SQLDeveloper" /></p>
+
+<p>Then fill in the necessary information (pay attention to the SID, as we have to change it for “orcl” that is the one we defined during the installation process). Then click on “Test” button and check that you get the “Status: Success”.</p>
+
+<p><img src="../assets/Oracle_installation/SQLDeveloper04.png" alt="SQLDeveloper" /></p>
+
+<p>Then you can press the connect button to connect to the server. Check that the connection has been stablished.</p>
+
+<p><img src="../assets/Oracle_installation/SQLDeveloper05.png" alt="SQLDeveloper" /></p>
 <div class="footnotes" role="doc-endnotes">
   <ol>
     <li id="fn:1" role="doc-endnote">
