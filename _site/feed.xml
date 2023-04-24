@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-24T13:03:37+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-24T14:11:38+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Unit 2. Oracle connection.</title><link href="http://localhost:4000/ASGBD/unit2/Oracle_connection.html" rel="alternate" type="text/html" title="Unit 2. Oracle connection." /><published>2023-04-24T13:00:00+02:00</published><updated>2023-04-24T13:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit2/Oracle_connection</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit2/Oracle_connection.html"><![CDATA[<h1 id="connect-to-de-database">Connect to de database</h1>
+
+<p>In the previous notes we have installed the Oracle Server and the tools we can use to connect to the database in the same machine:</p>
+
+<ul>
+  <li>Command Line Mode</li>
+  <li>OEM - Oracle Enterprise Manager</li>
+  <li>SQL Developer</li>
+</ul>
+
+<p>But in a real situation we as database administrators will not be directly connected to the server, but rather on a completely different computer in our office far away. We are going to see in this section how to connect to the database in this situation. We will see it in order of complexity.</p>
+
+<h2 id="connect-using-oem---oracle-enterprise-manager">Connect using OEM - Oracle Enterprise Manager</h2>
+
+<p>As we saw in the previous section, in Oracle 11g the OEM is a web page we can access using any web browser. So it shouldn’t have to be difficult to connect to it. When we were directly connected to the server we used this address “https://localhost:1158/em”, so now, in a different computer we just have to change the IP address from “localhost” to the public IP address of the server. The way to get the IP address can be different if we have our server in Azure or on a local VirtualBox VM. Read the following section that fits your situation. You can ignore the other one.</p>
+
+<p><strong>VirtualBox VM</strong></p>
+
+<p>In this case you have to make sure to select your network adapter as “Bridged adapter”.</p>
+
+<p><img src="../assets/Oracle_connection/connection01.png" alt="connection" /></p>
+
+<p>When you run the VM you will see the IP address just keeping the cursor over the network icon in the down right area of the window.</p>
+
+<p><img src="../assets/Oracle_connection/connection02.png" alt="connection" /></p>
+
+<p><strong>VM in Azure</strong></p>
+
+<p>If your VM is in Azure we saw how to get the public IP address when we created the VM. Just to remember it, it is in the VM page.</p>
+
+<p><img src="../assets/Windows_Server_in_Azure/16.png" alt="WindowsServerInstallation" /></p>
+
+<p>Well, we already have the public IP address in eithe case so we continue the same way no matter where the VM is located. We just have to open a web browser in our computer and go to: “https://<em>publicIPaddress</em>:1158/em” changing <em>publicIPaddress</em> for the IP of the server. If we do it well probably get nothing. That’s because the server firewall is blocking the connection. We have to open this ports:</p>
+
+<ul>
+  <li>TCP 1158</li>
+  <li>TCP 1521</li>
+</ul>
+
+<p>Open the server and find “Windows Firewall”. Create a new “Inbond rule”.</p>
+
+<p>Open by port.
+<img src="../assets/Oracle_connection/connection03.png" alt="connection" /></p>
+
+<p>Open those TCP ports
+<img src="../assets/Oracle_connection/connection04.png" alt="connection" /></p>
+
+<p>You can leave the rest of options without changing anything. Give the rule the name you want.
+<img src="../assets/Oracle_connection/connection05.png" alt="connection" /></p>
+
+<p>Now try to open the OEM again.</p>
+
+<blockquote>
+  <p>Remember <em>Orace Enterprise Manager 11g</em> uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. In Mozilla Firefox last versions you can learn how to do it <a href="https://support.mozilla.org/en-US/questions/1101896">here</a>.</p>
+</blockquote>
+
+<p>Once the TLS problem is solved you will have access to the OEM.
+<img src="../assets/Oracle_connection/connection06.png" alt="connection" /></p>]]></content><author><name></name></author><category term="Unit2" /><summary type="html"><![CDATA[Connect to de database]]></summary></entry><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
 
 <p>In this note we will see how to create a Windows Server 2012. We will use that machine to install our Oracle Database afterwards.</p>
 
