@@ -58,3 +58,120 @@ Now try to open the OEM again.
 Once the TLS problem is solved you will have access to the OEM.
 ![connection](../assets/Oracle_connection/connection06.png)
 
+**VM in Azure**
+
+If our server VM is located in Azure we will see that we cannot reach the OEM yet. That is because Azure has its own "firewall" that is called "Network Security Group - NSG" where we have to open the ports. We first go to "All resources" and we see the NSG for our server
+
+![connection](../assets/Oracle_connection/connection07.png)
+
+Click on it to see the NSG configuration. We see that the RDP port is already open, to allow the RDP connection. Let's go to "Settings" and click on "Inbound security rules"
+
+![connection](../assets/Oracle_connection/connection08.png)
+
+Now click on "+ Add" to add a new rule.
+
+![connection](../assets/Oracle_connection/connection09.png)
+
+Configure the rule to allow connections to 1158 and 1521 TCP ports. Give a name to the rule.
+
+![connection](../assets/Oracle_connection/connection10.png)
+
+Check that the rule has been properly created.
+
+![connection](../assets/Oracle_connection/connection11.png)
+
+Now you shuld be able to connect to the OEM in the server.
+
+## Connect using SQL Developer
+
+To connect using OEM there was no need no install any SW. Now you have to install SQL Developer and you have to decide if you want to install it on a VM or directly in your computer.
+
+We saw when we installed the server how to install the SQL Developer. Just remember:
+
+- Download the last version from oracle web page for your OS. You can find it [here](https://www.oracle.com/database/sqldeveloper/).
+- Follow the installation instructions in that page.
+  - If you want to install it in an Ubuntu Linux you can find detailed instructions (here)[https://dev.to/ishakantony/how-to-install-oracle-sql-developer-on-ubuntu-20-04-3jpd]
+- Once installed, open the application.
+
+Once the SQL Developer is opened we have to create a connection to the database. There are 2 ways of doing it:
+
+- Basic connection
+  - Existing from version 10g. Very comfortable. The server address, instance name, username and password must be specified. 
+- TNS connection 
+  - Transparent Network Substrate. It is the one that has traditionally been used by Oracle. It's a very solid connection.
+
+### Basic connection.
+
+Let's create a basic connection from SQL Developer. Firs, click on the "+" to create a new connection.
+
+![connection](../assets/Oracle_connection/connection12.png)
+
+Fill in the required information. Connect as user scontt (password "tiger" remember) and change the IP address for your server IP address.
+
+![connection](../assets/Oracle_connection/connection13.png)
+
+The necessary parameters in this case are:
+* Connection name: orcl
+* User: scott
+* Password: tiger
+* Connection type: Basic
+* Hostname: IP of your server
+* Port: 1521 (already open on the server)
+* SID: orcl
+
+We press `Test` and we check that the "Status: correct".
+
+![connection](../assets/Oracle_connection/connection14.png)
+
+Now we can connect to the database.
+
+![connection](../assets/Oracle_connection/connection15.png)
+
+### Listener configuration
+
+It might happen that the test status is not correct, but something like this.
+
+![connection](../assets/Oracle_connection/connection16.png)
+
+If we read the message it gives us a clue of what is happening. It has to do with the "Listener". Let's open a OEM window to solve it.
+
+In order to connect from the client, we must configure the listener to accept requests that are addressed to the server's own IP.
+
+We do this by connecting to Enterprise Manager with the SYS user as SYSDBA. From the main screen we enter `LISTENER_localhost`.
+
+![connection](../assets/Oracle_connection/connection17.png)
+
+We edit the listener.
+
+![connection](../assets/Oracle_connection/connection18.png)
+
+It is asking us for a user and password, In this case it refers to the operating system user and pass, that is, the user we use to login in the Windows Server. We gave it "administrator" when we installed the server.
+
+![connection](../assets/Oracle_connection/connection18bis.png)
+
+We added a new address.
+
+![connection](../assets/Oracle_connection/connection19.png)
+
+We put the server IP and keep the default port.
+
+![connection](../assets/Oracle_connection/connection20.png)
+
+We now have two addresses in the listener which means that is going to accept connections addressed to localhost and the externar IP address.
+
+![connection](../assets/Oracle_connection/connection21.png)
+
+We confirm the changes and restart the listener that's it.
+
+![connection](../assets/Oracle_connection/connection22.png)
+
+We can now test the connection again in SQL Developer and now it should work.
+
+## Other connection methods.
+
+In the previous sections we have seen how to connect to the database using OEM and SQL Developer basic connection. There are other ways we can make the connection:
+
+- SQL*Plus
+- SQL Developer usin TNS connection
+
+We will not see these methods in this course.
