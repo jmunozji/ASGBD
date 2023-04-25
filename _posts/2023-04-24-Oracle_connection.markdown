@@ -90,7 +90,7 @@ We saw when we installed the server how to install the SQL Developer. Just remem
 
 - Download the last version from oracle web page for your OS. You can find it [here](https://www.oracle.com/database/sqldeveloper/).
 - Follow the installation instructions in that page.
-  - If you want to install it in an Ubuntu Linux you can find detailed instructions [here)](https://dev.to/ishakantony/how-to-install-oracle-sql-developer-on-ubuntu-20-04-3jpd)
+  - If you want to install it in an Ubuntu Linux you can find detailed instructions [here].(https://dev.to/ishakantony/how-to-install-oracle-sql-developer-on-ubuntu-20-04-3jpd)
 - Once installed, open the application.
 
 Once the SQL Developer is opened we have to create a connection to the database. There are 2 ways of doing it:
@@ -182,9 +182,9 @@ Once installed connect using the information in [this page](https://xulioxesus.g
 
 To make the TNS connection you have to first create the tns file with all the information needed. To create that file you can use the "Net Configuration Assistant". To get it you have to 
 
-- Go th the [Oracle Database Software Donwloads](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html).
-- Select your version and platform and clic on "See all" on the right.
+- Go to the [Oracle Database Software Donwloads](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html).
+- Select your version and platform and click on "See all" on the right.
 - There you find the "Oracle Database XX client"
-- Download and install it following the installations instructions provided.
+- Download and install it following the  instructions provided.
 
-Once installed you have how to create the TNS connection in [this page](https://xulioxesus.github.io/jekyll/update/2020/10/03/sql-developer-nueva-conexion.html)
+Once installed you have how to create the TNS connection in [this page](https://xulioxesus.github.io/jekyll/update/2020/10/03/sql-developer-nueva-conexion.html).
