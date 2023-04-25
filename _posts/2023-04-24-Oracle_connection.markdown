@@ -35,7 +35,7 @@ If your VM is in Azure we saw how to get the public IP address when we created t
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/16.png)
 
-Well, we already have the public IP address in eithe case so we continue the same way no matter where the VM is located. We just have to open a web browser in our computer and go to: "https://*publicIPaddress*:1158/em" changing *publicIPaddress* for the IP of the server. If we do it well probably get nothing. That's because the server firewall is blocking the connection. We have to open this ports:
+Well, we already have the public IP address in either case so we continue the same way no matter where the VM is located. We just have to open a web browser in our computer and go to: "https://*publicIPaddress*:1158/em" changing *publicIPaddress* for the IP of the server. If we do it, we will probably get nothing. That's because the server firewall is blocking the connection. We have to open this ports:
 
 - TCP 1158
 - TCP 1521
@@ -51,7 +51,7 @@ Open those TCP ports
 You can leave the rest of options without changing anything. Give the rule the name you want.
 ![connection](../assets/Oracle_connection/connection05.png)
 
-Now try to open the OEM again.
+Now try to open the OEM again in your web browser.
 
 > Remember *Orace Enterprise Manager 11g* uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. In Mozilla Firefox last versions you can learn how to do it [here](https://support.mozilla.org/en-US/questions/1101896).
 
@@ -90,7 +90,7 @@ We saw when we installed the server how to install the SQL Developer. Just remem
 
 - Download the last version from oracle web page for your OS. You can find it [here](https://www.oracle.com/database/sqldeveloper/).
 - Follow the installation instructions in that page.
-  - If you want to install it in an Ubuntu Linux you can find detailed instructions (here)[https://dev.to/ishakantony/how-to-install-oracle-sql-developer-on-ubuntu-20-04-3jpd]
+  - If you want to install it in an Ubuntu Linux you can find detailed instructions [here)](https://dev.to/ishakantony/how-to-install-oracle-sql-developer-on-ubuntu-20-04-3jpd)
 - Once installed, open the application.
 
 Once the SQL Developer is opened we have to create a connection to the database. There are 2 ways of doing it:
@@ -102,11 +102,11 @@ Once the SQL Developer is opened we have to create a connection to the database.
 
 ### Basic connection.
 
-Let's create a basic connection from SQL Developer. Firs, click on the "+" to create a new connection.
+Let's create a basic connection from SQL Developer. First, click on the "+" to create a new connection.
 
 ![connection](../assets/Oracle_connection/connection12.png)
 
-Fill in the required information. Connect as user scontt (password "tiger" remember) and change the IP address for your server IP address.
+Fill in the required information. Connect as user scott (password "tiger" remember) and change the IP address for your server IP address.
 
 ![connection](../assets/Oracle_connection/connection13.png)
 
@@ -145,11 +145,11 @@ We edit the listener.
 
 ![connection](../assets/Oracle_connection/connection18.png)
 
-It is asking us for a user and password, In this case it refers to the operating system user and pass, that is, the user we use to login in the Windows Server. We gave it "administrator" when we installed the server.
+It is asking us for a user and password, In this case it refers to the operating system user and pass, that is, the user we use to login in the Windows Server. We gave it "administrador" when we installed the server.
 
 ![connection](../assets/Oracle_connection/connection18bis.png)
 
-We added a new address.
+We add a new address.
 
 ![connection](../assets/Oracle_connection/connection19.png)
 
@@ -174,4 +174,17 @@ In the previous sections we have seen how to connect to the database using OEM a
 - SQL*Plus
 - SQL Developer usin TNS connection
 
-We will not see these methods in this course.
+We will not see these methods in this course but if you are interested to try them, you have to install some SW first.
+
+If you just want to try SQL\*Plus, you can get it from [Oracle Instant Client download page](https://www.oracle.com/database/technologies/instant-client/downloads.html). Just select your platform, and the following screen, the SQL\*Plus Package.
+
+Once installed connect using the information in [this page](https://xulioxesus.github.io/jekyll/update/2020/10/04/sqlplus-desde-cliente.html).
+
+To make the TNS connection you have to first create the tns file with all the information needed. To create that file you can use the "Net Configuration Assistant". To get it you have to 
+
+- Go th the [Oracle Database Software Donwloads](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html).
+- Select your version and platform and clic on "See all" on the right.
+- There you find the "Oracle Database XX client"
+- Download and install it following the installations instructions provided.
+
+Once installed you have how to create the TNS connection in [this page](https://xulioxesus.github.io/jekyll/update/2020/10/03/sql-developer-nueva-conexion.html)
