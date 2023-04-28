@@ -5,8 +5,6 @@ date:   2023-03-25 14:00:00 +0100
 categories: Unit2
 permalink: /:categories/:title.html
 ---
-## Start and stop Oracle.
-
 Usually the booting of all DBMS is automatic. When the Operating System starts, it starts the Database Engine. The stop is also automatic. In any case, it is convenient to know the usual steps to start and stop it.
 
 The steps that Oracle actually needs to boot are 3:
@@ -15,7 +13,7 @@ The steps that Oracle actually needs to boot are 3:
 - **Mount**: Mount the Database. This involves opening the control file, which is a file that has critical information for the database, such as its own name, when it was created, and the name and location of all files that are used when it is working. It's so important that it's even a good idea to have a backup control file that works as a mirror (in fact Oracle creates 3 by default).
 - **Open**: open the database. The actual database files will open. When this phase is completed, you can access the Database and use its objects.
   
-In the ***NoMount** or **Mount** phase, that is the first two states, only the DBA can connect to the Database, to perform administration tasks.
+In the **NoMount** or **Mount** phase, that is the first two states, only the DBA can connect to the Database, to perform administration tasks.
 
 Apart from the automatic start and stop (the usual) with which the three steps are always done, unless there is a problem, let's see how to do it manually with the administrative tools.
 
@@ -25,7 +23,7 @@ We will also take the opportunity to see other things that can be done with the 
 
 We have to enter OEM as user SYS user, and connecting as SYSDBA. We can also enter as SYSTEM, by then we won't have permission to do everything.
 
-![StartStop](/assets/Oracle_start_stop/1.png)
+![StartStop](../assets/Oracle_start_stop/1.png)
 
 Started
 In the General tab, when the Database is selected, choose the Started, Mounted or Open options to get to the first, second or third step, respectively (with the Mostrar todos los estados option activated).
