@@ -7,6 +7,48 @@ permalink: /:categories/:title.html
 ---
 Usually the booting of all DBMS is automatic. When the Operating System starts, it starts the Database Engine. The stop is also automatic. In any case, it is convenient to know the usual steps to start and stop it.
 
+We will also take the opportunity to see other things that can be done with the Instance Manager, such as changing parameters, managing sessions connected to the Database, etc.
+
+# Start and stop with Oracle Enterprise Manager OEM - Instance Manager
+
+We have to enter OEM as user **SYS**, and connecting as SYSDBA.
+
+![StartStop](../assets/Oracle_start_stop/1.png)
+
+## Stop de database
+
+In the "Home" tab choose "Shutdown". 
+
+![StartStop](../assets/Oracle_start_stop/2.png)
+
+Then it is going to ask you for "Host Credentials" and "Database Credentials". The first ones are the operating system user and pass, that is "administrador" and the pass you selected. The others are the database user and pass, that is user: sys and pass: system, and connect as Sysdba.
+
+![StartStop](../assets/Oracle_start_stop/3.png) 
+
+Now press the `Advanced Options` button.
+
+![StartStop](../assets/Oracle_start_stop/4.png)
+
+
+We will have 4 ways to do it, which are ordered from least to strongest:
+
+- Normal: Wait for all users to log out, then close the database
+- Transactional: Wait for users with pending transactions to Commit or Rollback, then close the sessions and the database
+- Immediate: closes sessions automatically, rolling back all transactions, and then closes the B.D.
+- Abort: close the database in a fulminating manner. It is not advisable to be too strong.
+
+![StartStop](../assets/Oracle_start_stop/5.png)
+
+The most advisable is the third, since some users may take forever to close their sessions. We accept and we return to the previous screen. Now press `Yes` and the system informs us that is being shutdown.
+
+![StartStop](../assets/Oracle_start_stop/6.png)
+
+After a while (don't try it immediately) press `Refresh` and go back to the main screen. You can see how the database is shutdown now.
+
+![StartStop](../assets/Oracle_start_stop/7.png)
+
+## Start the database
+
 The steps that Oracle actually needs to boot are 3:
 
 - **Startup**: Starts the instance. This involves the allocation of memory for the SGA and the initiation of system processes, the so-called background processes (they are in the background, without us noticing them). Also at this point the parameter file, which in earlier versions of Oracle is called INIT.ORA, is used to start the instance. From version 9i, in addition to the INIT.ORA parameter file, the Server Parameter File (SPFile) can also be used, which allows the server to be started even if the command is given from another machine (and in principle not INIT.ORA parameter file would be available). This SPFile is named SPFILEORCL.ORA (if ORCL is the instance SID). This is a non-editable file. The Startup state is also called **NoMount**.
@@ -17,33 +59,42 @@ In the **NoMount** or **Mount** phase, that is the first two states, only the DB
 
 Apart from the automatic start and stop (the usual) with which the three steps are always done, unless there is a problem, let's see how to do it manually with the administrative tools.
 
-We will also take the opportunity to see other things that can be done with the Instance Manager, such as changing parameters, managing sessions connected to the Database, etc.
+In the previous state, with the database shutdown, we press on `Startup` to start it again.
 
-## Oracle Enterprise Manager OEM - Instance Manager
+![StartStop](../assets/Oracle_start_stop/7.png)
 
-We have to enter OEM as user SYS user, and connecting as SYSDBA. We can also enter as SYSTEM, by then we won't have permission to do everything.
+We have to provide the Host credentials and Database Credentials again. 
 
-![StartStop](../assets/Oracle_start_stop/1.png)
+![StartStop](../assets/Oracle_start_stop/8.png)
 
-Started
-In the General tab, when the Database is selected, choose the Started, Mounted or Open options to get to the first, second or third step, respectively (with the Mostrar todos los estados option activated).
+We get a screen to Start/Stop the database informing us that it is closed and the operation to do is start it.
 
-stop
-In the same tab choose Cerrada (Shutdown). We will have 4 ways to do it, which are ordered from least to strongest:
+![StartStop](../assets/Oracle_start_stop/9.png)
 
+As in the shutdown process, we can press the `Advanced Options` button to get the different forms to start the database to reach various states we have previously seen. But normally we will select the third one, "Open the database"
 
+In "Other Startup Options" we can select if we want restricted access to the Database only to administrative personnel to perform administrative tasks, such as to make a backup. 
 
-Normal: Wait for all users to log out, then close the B.D.
-Transactional: Wait for users with pending transactions to Commit or Rollback, then close the sessions and the B.D.
-Immediate: closes sessions automatically, rolling back all transactions, and then closes the B.D.
-Abort: close the B.D. in a fulminating manner. It is not advisable to be too strong.
-The most advisable is the third, since some users may take forever to close their sessions.
+In this screen, it also allows us to start by taking the parameters from a parameter file (pfile) instead of the default initialization parameter. That way we can specify a parameter file modified by us. But we must note that this file must be located in the server and we have to provide the full path to the file within the server.
 
-When we restart an instance it will ask us for some options, in case we want restricted access to the Database (and do administrative tasks; for example only the administrator can enter to be able to make a backup...), or if we want it to be in read-only mode. Finally, it also allows us to start by taking the parameters from the SPFile, or vice versa using a traditional parameter file, from previous versions of Oracle. In this second way we can specify a parameter file modified by us. But we must note that this file must be available from the machine where the boot command is launched, in case we do it from a remote machine. On the other hand, if we use SPFile, it will start with the parameters located on the machine where the server is.
+![StartStop](../assets/Oracle_start_stop/9_2.png)
 
+Let's press OK to go back to the previous screen. Now press `Yes` to start the database. Now wait a bit for the database to be opened.
 
+![StartStop](../assets/Oracle_start_stop/10.png)
 
-Information and parameters
+We get a login screen again.
+
+![StartStop](../assets/Oracle_start_stop/11.png)
+
+And we have our database opened again.
+
+![StartStop](../assets/Oracle_start_stop/12.png)
+
+# Information and parameters
+
+SEGUIR AQUÍ
+
 From the INSTANCE MANAGER you can also view information about the SGA and operating mode.
 
 
@@ -73,7 +124,8 @@ In the next image we are going to disconnect the SCOTT user from the SQL*Plus se
 The disconnection can be immediate (rolls back the transactions in progress) or post-transaction (waits to confirm or revoke the transaction in progress and then closes it). Notice how after closing this session, nothing can be done from SQL*Plus anymore (and it says so very graphically).
 
 
-
+Started
+In the General tab, when the Database is selected, choose the Started, Mounted or Open options to get to the first, second or third step, respectively (with the Mostrar todos los estados option activated).
  
 
  
