@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-24T14:11:38+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Unit 2. Oracle connection.</title><link href="http://localhost:4000/ASGBD/unit2/Oracle_connection.html" rel="alternate" type="text/html" title="Unit 2. Oracle connection." /><published>2023-04-24T13:00:00+02:00</published><updated>2023-04-24T13:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit2/Oracle_connection</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit2/Oracle_connection.html"><![CDATA[<h1 id="connect-to-de-database">Connect to de database</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/ASGBD/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/ASGBD/" rel="alternate" type="text/html" /><updated>2023-04-29T11:25:21+02:00</updated><id>http://localhost:4000/ASGBD/feed.xml</id><title type="html">ASGBD notes</title><subtitle>These are the class notes for 2023-2024 ASGBD module</subtitle><entry><title type="html">Unit 2. Oracle connection.</title><link href="http://localhost:4000/ASGBD/unit2/Oracle_connection.html" rel="alternate" type="text/html" title="Unit 2. Oracle connection." /><published>2023-04-24T13:00:00+02:00</published><updated>2023-04-24T13:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit2/Oracle_connection</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit2/Oracle_connection.html"><![CDATA[<h1 id="connect-to-de-database">Connect to de database</h1>
 
 <p>In the previous notes we have installed the Oracle Server and the tools we can use to connect to the database in the same machine:</p>
 
@@ -30,7 +30,7 @@
 
 <p><img src="../assets/Windows_Server_in_Azure/16.png" alt="WindowsServerInstallation" /></p>
 
-<p>Well, we already have the public IP address in eithe case so we continue the same way no matter where the VM is located. We just have to open a web browser in our computer and go to: “https://<em>publicIPaddress</em>:1158/em” changing <em>publicIPaddress</em> for the IP of the server. If we do it well probably get nothing. That’s because the server firewall is blocking the connection. We have to open this ports:</p>
+<p>Well, we already have the public IP address in either case so we continue the same way no matter where the VM is located. We just have to open a web browser in our computer and go to: “https://<em>publicIPaddress</em>:1158/em” changing <em>publicIPaddress</em> for the IP of the server. If we do it, we will probably get nothing. That’s because the server firewall is blocking the connection. We have to open this ports:</p>
 
 <ul>
   <li>TCP 1158</li>
@@ -48,14 +48,164 @@
 <p>You can leave the rest of options without changing anything. Give the rule the name you want.
 <img src="../assets/Oracle_connection/connection05.png" alt="connection" /></p>
 
-<p>Now try to open the OEM again.</p>
+<p>Now try to open the OEM again in your web browser.</p>
 
 <blockquote>
   <p>Remember <em>Orace Enterprise Manager 11g</em> uses TLS 1.0 and 1.1. which are disabled by default in web browsers nowadays. In Mozilla Firefox last versions you can learn how to do it <a href="https://support.mozilla.org/en-US/questions/1101896">here</a>.</p>
 </blockquote>
 
 <p>Once the TLS problem is solved you will have access to the OEM.
-<img src="../assets/Oracle_connection/connection06.png" alt="connection" /></p>]]></content><author><name></name></author><category term="Unit2" /><summary type="html"><![CDATA[Connect to de database]]></summary></entry><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
+<img src="../assets/Oracle_connection/connection06.png" alt="connection" /></p>
+
+<p><strong>VM in Azure</strong></p>
+
+<p>If our server VM is located in Azure we will see that we cannot reach the OEM yet. That is because Azure has its own “firewall” that is called “Network Security Group - NSG” where we have to open the ports. We first go to “All resources” and we see the NSG for our server</p>
+
+<p><img src="../assets/Oracle_connection/connection07.png" alt="connection" /></p>
+
+<p>Click on it to see the NSG configuration. We see that the RDP port is already open, to allow the RDP connection. Let’s go to “Settings” and click on “Inbound security rules”</p>
+
+<p><img src="../assets/Oracle_connection/connection08.png" alt="connection" /></p>
+
+<p>Now click on “+ Add” to add a new rule.</p>
+
+<p><img src="../assets/Oracle_connection/connection09.png" alt="connection" /></p>
+
+<p>Configure the rule to allow connections to 1158 and 1521 TCP ports. Give a name to the rule.</p>
+
+<p><img src="../assets/Oracle_connection/connection10.png" alt="connection" /></p>
+
+<p>Check that the rule has been properly created.</p>
+
+<p><img src="../assets/Oracle_connection/connection11.png" alt="connection" /></p>
+
+<p>Now you shuld be able to connect to the OEM in the server.</p>
+
+<h2 id="connect-using-sql-developer">Connect using SQL Developer</h2>
+
+<p>To connect using OEM there was no need no install any SW. Now you have to install SQL Developer and you have to decide if you want to install it on a VM or directly in your computer.</p>
+
+<p>We saw when we installed the server how to install the SQL Developer. Just remember:</p>
+
+<ul>
+  <li>Download the last version from oracle web page for your OS. You can find it <a href="https://www.oracle.com/database/sqldeveloper/">here</a>.</li>
+  <li>Follow the installation instructions in that page.
+    <ul>
+      <li>If you want to install it in an Ubuntu Linux you can find detailed instructions [here].(https://dev.to/ishakantony/how-to-install-oracle-sql-developer-on-ubuntu-20-04-3jpd)</li>
+    </ul>
+  </li>
+  <li>Once installed, open the application.</li>
+</ul>
+
+<p>Once the SQL Developer is opened we have to create a connection to the database. There are 2 ways of doing it:</p>
+
+<ul>
+  <li>Basic connection
+    <ul>
+      <li>Existing from version 10g. Very comfortable. The server address, instance name, username and password must be specified.</li>
+    </ul>
+  </li>
+  <li>TNS connection
+    <ul>
+      <li>Transparent Network Substrate. It is the one that has traditionally been used by Oracle. It’s a very solid connection.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="basic-connection">Basic connection.</h3>
+
+<p>Let’s create a basic connection from SQL Developer. First, click on the “+” to create a new connection.</p>
+
+<p><img src="../assets/Oracle_connection/connection12.png" alt="connection" /></p>
+
+<p>Fill in the required information. Connect as user scott (password “tiger” remember) and change the IP address for your server IP address.</p>
+
+<p><img src="../assets/Oracle_connection/connection13.png" alt="connection" /></p>
+
+<p>The necessary parameters in this case are:</p>
+<ul>
+  <li>Connection name: orcl</li>
+  <li>User: scott</li>
+  <li>Password: tiger</li>
+  <li>Connection type: Basic</li>
+  <li>Hostname: IP of your server</li>
+  <li>Port: 1521 (already open on the server)</li>
+  <li>SID: orcl</li>
+</ul>
+
+<p>We press <code class="language-plaintext highlighter-rouge">Test</code> and we check that the “Status: correct”.</p>
+
+<p><img src="../assets/Oracle_connection/connection14.png" alt="connection" /></p>
+
+<p>Now we can connect to the database.</p>
+
+<p><img src="../assets/Oracle_connection/connection15.png" alt="connection" /></p>
+
+<h3 id="listener-configuration">Listener configuration</h3>
+
+<p>It might happen that the test status is not correct, but something like this.</p>
+
+<p><img src="../assets/Oracle_connection/connection16.png" alt="connection" /></p>
+
+<p>If we read the message it gives us a clue of what is happening. It has to do with the “Listener”. Let’s open a OEM window to solve it.</p>
+
+<p>In order to connect from the client, we must configure the listener to accept requests that are addressed to the server’s own IP.</p>
+
+<p>We do this by connecting to Enterprise Manager with the SYS user as SYSDBA. From the main screen we enter <code class="language-plaintext highlighter-rouge">LISTENER_localhost</code>.</p>
+
+<p><img src="../assets/Oracle_connection/connection17.png" alt="connection" /></p>
+
+<p>We edit the listener.</p>
+
+<p><img src="../assets/Oracle_connection/connection18.png" alt="connection" /></p>
+
+<p>It is asking us for a user and password, In this case it refers to the operating system user and pass, that is, the user we use to login in the Windows Server. We gave it “administrador” when we installed the server.</p>
+
+<p><img src="../assets/Oracle_connection/connection18bis.png" alt="connection" /></p>
+
+<p>We add a new address.</p>
+
+<p><img src="../assets/Oracle_connection/connection19.png" alt="connection" /></p>
+
+<p>We put the server IP and keep the default port.</p>
+
+<p><img src="../assets/Oracle_connection/connection20.png" alt="connection" /></p>
+
+<p>We now have two addresses in the listener which means that is going to accept connections addressed to localhost and the externar IP address.</p>
+
+<p><img src="../assets/Oracle_connection/connection21.png" alt="connection" /></p>
+
+<p>We confirm the changes and restart the listener that’s it.</p>
+
+<p><img src="../assets/Oracle_connection/connection22.png" alt="connection" /></p>
+
+<p>We can now test the connection again in SQL Developer and now it should work.</p>
+
+<h2 id="other-connection-methods">Other connection methods.</h2>
+
+<p>In the previous sections we have seen how to connect to the database using OEM and SQL Developer basic connection. There are other ways we can make the connection:</p>
+
+<ul>
+  <li>SQL*Plus</li>
+  <li>SQL Developer usin TNS connection</li>
+</ul>
+
+<p>We will not see these methods in this course but if you are interested to try them, you have to install some SW first.</p>
+
+<p>If you just want to try SQL*Plus, you can get it from <a href="https://www.oracle.com/database/technologies/instant-client/downloads.html">Oracle Instant Client download page</a>. Just select your platform, and the following screen, the SQL*Plus Package.</p>
+
+<p>Once installed connect using the information in <a href="https://xulioxesus.github.io/jekyll/update/2020/10/04/sqlplus-desde-cliente.html">this page</a>.</p>
+
+<p>To make the TNS connection you have to first create the tns file with all the information needed. To create that file you can use the “Net Configuration Assistant”. To get it you have to</p>
+
+<ul>
+  <li>Go to the <a href="https://www.oracle.com/database/technologies/oracle-database-software-downloads.html">Oracle Database Software Donwloads</a>.</li>
+  <li>Select your version and platform and click on “See all” on the right.</li>
+  <li>There you find the “Oracle Database XX client”</li>
+  <li>Download and install it following the  instructions provided.</li>
+</ul>
+
+<p>Once installed you have how to create the TNS connection in <a href="https://xulioxesus.github.io/jekyll/update/2020/10/03/sql-developer-nueva-conexion.html">this page</a>.</p>]]></content><author><name></name></author><category term="Unit2" /><summary type="html"><![CDATA[Connect to de database]]></summary></entry><entry><title type="html">Windows Server in Azure</title><link href="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html" rel="alternate" type="text/html" title="Windows Server in Azure" /><published>2023-03-29T11:00:00+02:00</published><updated>2023-03-29T11:00:00+02:00</updated><id>http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit0/Windows_Server_in_Azure.html"><![CDATA[<h1 id="windows-server-in-azure">Windows Server in Azure</h1>
 
 <p>In this note we will see how to create a Windows Server 2012. We will use that machine to install our Oracle Database afterwards.</p>
 
@@ -423,7 +573,216 @@ You can put it in ““C:\Program Files\Oracle\sqldeveloper” and create a sho
       <p>March 2023 <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
-</div>]]></content><author><name></name></author><category term="Unit2" /><summary type="html"><![CDATA[Installation of the DBMS]]></summary></entry><entry><title type="html">Unit 2. Oracle DBMS basics.</title><link href="http://localhost:4000/ASGBD/unit2/Oracle_DBMS_basics.html" rel="alternate" type="text/html" title="Unit 2. Oracle DBMS basics." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit2/Oracle_DBMS_basics</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit2/Oracle_DBMS_basics.html"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
+</div>]]></content><author><name></name></author><category term="Unit2" /><summary type="html"><![CDATA[Installation of the DBMS]]></summary></entry><entry><title type="html">Unit 2. Start and stop Oracle.</title><link href="http://localhost:4000/ASGBD/unit2/Oracle_start_and_stop.html" rel="alternate" type="text/html" title="Unit 2. Start and stop Oracle." /><published>2023-03-25T14:00:00+01:00</published><updated>2023-03-25T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit2/Oracle_start_and_stop</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit2/Oracle_start_and_stop.html"><![CDATA[<p>Usually the booting of all DBMS is automatic. When the Operating System starts, it starts the Database Engine. The stop is also automatic. In any case, it is convenient to know the usual steps to start and stop it.</p>
+
+<p>We will also take the opportunity to see other things that can be done with the Instance Manager, such as changing parameters, managing sessions connected to the Database, etc.</p>
+
+<h1 id="start-and-stop-with-oracle-enterprise-manager-oem---instance-manager">Start and stop with Oracle Enterprise Manager OEM - Instance Manager</h1>
+
+<p>We have to enter OEM as user <strong>SYS</strong>, and connecting as SYSDBA.</p>
+
+<p><img src="../assets/Oracle_start_stop/1.png" alt="StartStop" /></p>
+
+<h2 id="stop-de-database">Stop de database</h2>
+
+<p>In the “Home” tab choose “Shutdown”.</p>
+
+<p><img src="../assets/Oracle_start_stop/2.png" alt="StartStop" /></p>
+
+<p>Then it is going to ask you for “Host Credentials” and “Database Credentials”. The first ones are the operating system user and pass, that is “administrador” and the pass you selected. The others are the database user and pass, that is user: sys and pass: system, and connect as Sysdba.</p>
+
+<p><img src="../assets/Oracle_start_stop/3.png" alt="StartStop" /></p>
+
+<p>Now press the <code class="language-plaintext highlighter-rouge">Advanced Options</code> button.</p>
+
+<p><img src="../assets/Oracle_start_stop/4.png" alt="StartStop" /></p>
+
+<p>We will have 4 ways to do it, which are ordered from least to strongest:</p>
+
+<ul>
+  <li>Normal: Wait for all users to log out, then close the database</li>
+  <li>Transactional: Wait for users with pending transactions to Commit or Rollback, then close the sessions and the database</li>
+  <li>Immediate: closes sessions automatically, rolling back all transactions, and then closes the B.D.</li>
+  <li>Abort: close the database in a fulminating manner. It is not advisable to be too strong.</li>
+</ul>
+
+<p><img src="../assets/Oracle_start_stop/5.png" alt="StartStop" /></p>
+
+<p>The most advisable is the third, since some users may take forever to close their sessions. We accept and we return to the previous screen. Now press <code class="language-plaintext highlighter-rouge">Yes</code> and the system informs us that is being shutdown.</p>
+
+<p><img src="../assets/Oracle_start_stop/6.png" alt="StartStop" /></p>
+
+<p>After a while (don’t try it immediately) press <code class="language-plaintext highlighter-rouge">Refresh</code> and go back to the main screen. You can see how the database is shutdown now.</p>
+
+<p><img src="../assets/Oracle_start_stop/7.png" alt="StartStop" /></p>
+
+<h2 id="start-the-database">Start the database</h2>
+
+<p>The steps that Oracle actually needs to boot are 3:</p>
+
+<ul>
+  <li><strong>Startup</strong>: Starts the instance. This involves the allocation of memory for the SGA and the initiation of system processes, the so-called background processes (they are in the background, without us noticing them). Also at this point the parameter file, which in earlier versions of Oracle is called INIT.ORA, is used to start the instance. From version 9i, in addition to the INIT.ORA parameter file, the Server Parameter File (SPFile) can also be used, which allows the server to be started even if the command is given from another machine (and in principle not INIT.ORA parameter file would be available). This SPFile is named SPFILEORCL.ORA (if ORCL is the instance SID). This is a non-editable file. The Startup state is also called <strong>NoMount</strong>.</li>
+  <li><strong>Mount</strong>: Mount the Database. This involves opening the control file, which is a file that has critical information for the database, such as its own name, when it was created, and the name and location of all files that are used when it is working. It’s so important that it’s even a good idea to have a backup control file that works as a mirror (in fact Oracle creates 3 by default).</li>
+  <li><strong>Open</strong>: open the database. The actual database files will open. When this phase is completed, you can access the Database and use its objects.</li>
+</ul>
+
+<p>In the <strong>NoMount</strong> or <strong>Mount</strong> phase, that is the first two states, only the DBA can connect to the Database, to perform administration tasks.</p>
+
+<p>Apart from the automatic start and stop (the usual) with which the three steps are always done, unless there is a problem, let’s see how to do it manually with the administrative tools.</p>
+
+<p>In the previous state, with the database shutdown, we press on <code class="language-plaintext highlighter-rouge">Startup</code> to start it again.</p>
+
+<p><img src="../assets/Oracle_start_stop/7.png" alt="StartStop" /></p>
+
+<p>We have to provide the Host credentials and Database Credentials again.</p>
+
+<p><img src="../assets/Oracle_start_stop/8.png" alt="StartStop" /></p>
+
+<p>We get a screen to Start/Stop the database informing us that it is closed and the operation to do is start it.</p>
+
+<p><img src="../assets/Oracle_start_stop/9.png" alt="StartStop" /></p>
+
+<p>As in the shutdown process, we can press the <code class="language-plaintext highlighter-rouge">Advanced Options</code> button to get the different forms to start the database to reach various states we have previously seen. But normally we will select the third one, “Open the database”</p>
+
+<p>In “Other Startup Options” we can select if we want restricted access to the Database only to administrative personnel to perform administrative tasks, such as to make a backup.</p>
+
+<p>In this screen, it also allows us to start by taking the parameters from a parameter file (pfile) instead of the default initialization parameter. That way we can specify a parameter file modified by us. But we must note that this file must be located in the server and we have to provide the full path to the file within the server.</p>
+
+<p><img src="../assets/Oracle_start_stop/9_2.png" alt="StartStop" /></p>
+
+<p>Let’s press OK to go back to the previous screen. Now press <code class="language-plaintext highlighter-rouge">Yes</code> to start the database. Now wait a bit for the database to be opened.</p>
+
+<p><img src="../assets/Oracle_start_stop/10.png" alt="StartStop" /></p>
+
+<p>We get a login screen again.</p>
+
+<p><img src="../assets/Oracle_start_stop/11.png" alt="StartStop" /></p>
+
+<p>And we have our database opened again.</p>
+
+<p><img src="../assets/Oracle_start_stop/12.png" alt="StartStop" /></p>
+
+<h1 id="information-and-parameters">Information and parameters</h1>
+
+<p>Appart from starting and stopping the database there are other basic administration tasks that de DBA administrator has to do complete.</p>
+
+<p>One of them is to control the memory usage. Before you continue, revise the initial section in this unit to remember what the SGA and PGA are. Basically the SYSTEM GLOBAL AREA (SGA) is a kind of cache area that Oracle mounts to optimize performance. There is one SGA for each Oracle instance running in the server. On the other hand the GLOBAL PROGRAM AREA (PGA) is an area of memory used by a single process that it does not share with any other. There will be a PGA for each process of each user running.</p>
+
+<p>To see and modify how the SGA and PGA are being used go to OEM “Server” tab, and then “Memory advisors”</p>
+
+<p><img src="../assets/Oracle_start_stop/13.png" alt="StartStop" /></p>
+
+<p>We can see that the Memory Management is automatic, but we could change it to manual, if need be.</p>
+
+<p>There is a tab for the SGA</p>
+
+<p><img src="../assets/Oracle_start_stop/14.png" alt="StartStop" /></p>
+
+<p>And another one for the PGA.</p>
+
+<p><img src="../assets/Oracle_start_stop/15.png" alt="StartStop" /></p>
+
+<p>Dedicate some time to see the different options in this screens and how you should make changes to the allocated memory for SGA and PGA.</p>
+
+<h2 id="initialization-parameters">Initialization parameters</h2>
+
+<p>Initialization parameters can also be viewed. Go to “Server” and then to “Initialization Parameters”.</p>
+
+<p><img src="../assets/Oracle_start_stop/16.png" alt="StartStop" /></p>
+
+<p>The parameters can be modified, and some of these, the dynamic ones, the modification will immediately take effect. But the modification of the non-dynamic ones will not take effect until the instance is restarted. In these cases, when the Apply button is pressed, an attempt is made to stop and restart it.</p>
+
+<p>And we must not forget to save the parameters file if we want the changes made to take effect if we restart the database.</p>
+
+<h2 id="session-management">Session management</h2>
+
+<p>You can also manage the sessions connected to the instance, to see the characteristics of the session and even to close them if we want. Among other things, it tells us the connected users, as which user of the Operating System they have authenticated, the name of the machine from which they have connected and through which program.</p>
+
+<p>To see the stablished connections go to “Performance” tab and then to “Search sessions”</p>
+
+<p><img src="../assets/Oracle_start_stop/17.png" alt="StartStop" /></p>
+
+<p>We can specify search criteria if we are looking for specific sessions, but if we just want to see all of them, just clic on <code class="language-plaintext highlighter-rouge">Go</code>.</p>
+
+<p><img src="../assets/Oracle_start_stop/18.png" alt="StartStop" /></p>
+
+<p>In the image you can see a SCOTT session made using SQL Developer, apart from system processes.</p>
+
+<p><img src="../assets/Oracle_start_stop/19.png" alt="StartStop" /></p>
+
+<p>Also, the SYS and SYSTEM users have connected from the same server machine.</p>
+
+<p>To disconnect the SCOTT user we just have to select the sessioin and press <code class="language-plaintext highlighter-rouge">Kill session</code>.</p>
+
+<p><img src="../assets/Oracle_start_stop/20.png" alt="StartStop" /></p>
+
+<p>The disconnection can be immediate (rolls back the transactions in progress) or post-transaction (waits to confirm or revoke the transaction in progress and then closes it).</p>
+
+<p><img src="../assets/Oracle_start_stop/21.png" alt="StartStop" /></p>
+
+<p>Notice how after closing this session, nothing can be done from the SYSTEM session.</p>
+
+<p><img src="../assets/Oracle_start_stop/22.png" alt="StartStop" /></p>
+
+<h1 id="line-mode-sys-user">LINE MODE (SYS user)</h1>
+
+<p>Just in case we do not have access to OEM, it could be a good idea to learn how to make all these basic actions from a command line program, such as SQL*PLUS.</p>
+
+<p>First, log in as SYSDBA.</p>
+
+<p><img src="../assets/Oracle_start_stop/23.png" alt="StartStop" /></p>
+
+<h2 id="shutdown">Shutdown</h2>
+
+<p>Give the SHUTDOWN command.</p>
+
+<p>The parameters can be set: NORMAL (default), TRANSACTIONAL, IMMEDIATE or ABORT.</p>
+
+<p><img src="../assets/Oracle_start_stop/24.png" alt="StartStop" /></p>
+
+<h2 id="start">Start</h2>
+
+<p>Give the STARTUP command. If we wanted to start in three steps:</p>
+
+<p>STARTUP NOMOUNT;
+ALTER DATABASE MOUNT;
+ALTER DATABASE OPEN;</p>
+
+<p><img src="../assets/Oracle_start_stop/25.png" alt="StartStop" /></p>
+
+<p>Or in two:</p>
+
+<p>STARTUP MOUNT;
+ALTER DATABASE OPEN;</p>
+
+<p><img src="../assets/Oracle_start_stop/26.png" alt="StartStop" /></p>
+
+<h2 id="initialized-parameters">Initialized parameters</h2>
+
+<p>To be able to see the list of initialized parameters, we will issue the SHOW PARAMETERS command.</p>
+
+<p>If we want to modify a parameter without stopping the database, we will have to use the ALTER DATABASE statement, but it does not work with all parameters.</p>
+
+<p>If we want to modify any parameter, the simplest and most foolproof way is the one mentioned before: modify an INIT.ORA file, stop the instance and start it again.</p>
+
+<h2 id="sessions">Sessions</h2>
+<p>To control the sessions, more specifically, to terminate them, it would be done by means of the ALTER SYSTEM KILL SESSION command, followed by the session number. We can find this out by consulting a view called V$SESSION, accessible only to administrators (for example SYS):</p>
+
+<p><img src="../assets/Oracle_start_stop/27.png" alt="StartStop" /></p>
+
+<p>If we assume that these are the sessions in progress, and we want to close the session of the user SCOTT, we would do it with the sentence</p>
+
+<p><code class="language-plaintext highlighter-rouge">ALTER SYSTEM KILL SESSION '22,39';</code></p>
+
+<p>Before closing the session, a Rollback will automatically be made, leaving any ongoing transactions without effect.</p>
+
+<p><img src="../assets/Oracle_start_stop/28.png" alt="StartStop" /></p>
+
+<p>If we don’t want to be so drastic, we can do:</p>
+
+<p><code class="language-plaintext highlighter-rouge">ALTER SYSTEM KILL SESSION '22,39' POST_TRANSACTION;</code></p>
+
+<p>The system will then wait for the user to confirm (or reverse) the transaction, and then disconnect the user.</p>]]></content><author><name></name></author><category term="Unit2" /><summary type="html"><![CDATA[Usually the booting of all DBMS is automatic. When the Operating System starts, it starts the Database Engine. The stop is also automatic. In any case, it is convenient to know the usual steps to start and stop it.]]></summary></entry><entry><title type="html">Unit 2. Oracle DBMS basics.</title><link href="http://localhost:4000/ASGBD/unit2/Oracle_DBMS_basics.html" rel="alternate" type="text/html" title="Unit 2. Oracle DBMS basics." /><published>2023-03-21T14:00:00+01:00</published><updated>2023-03-21T14:00:00+01:00</updated><id>http://localhost:4000/ASGBD/unit2/Oracle_DBMS_basics</id><content type="html" xml:base="http://localhost:4000/ASGBD/unit2/Oracle_DBMS_basics.html"><![CDATA[<h1 id="oracle-installation-and-configuration">Oracle installation and configuration.</h1>
 
 <p><img src="../assets/Oracle_DBMS_basics/T8_0.png" alt="OracleIntroduction" /></p>
 

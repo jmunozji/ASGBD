@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Unit 2. Start and stop Oracle."
+title:  "Unit 2. Start and stop Oracle. Basic administration"
 date:   2023-03-25 14:00:00 +0100
 categories: Unit2
 permalink: /:categories/:title.html
@@ -93,73 +93,123 @@ And we have our database opened again.
 
 # Information and parameters
 
-SEGUIR AQUÍ
+Appart from starting and stopping the database there are other basic administration tasks that de DBA administrator has to do complete.
 
-From the INSTANCE MANAGER you can also view information about the SGA and operating mode.
+One of them is to control the memory usage. Before you continue, revise the initial section in this unit to remember what the SGA and PGA are. Basically the SYSTEM GLOBAL AREA (SGA) is a kind of cache area that Oracle mounts to optimize performance. There is one SGA for each Oracle instance running in the server. On the other hand the GLOBAL PROGRAM AREA (PGA) is an area of memory used by a single process that it does not share with any other. There will be a PGA for each process of each user running.
 
+To see and modify how the SGA and PGA are being used go to OEM "Server" tab, and then "Memory advisors"
 
+![StartStop](../assets/Oracle_start_stop/13.png)
 
-Initialization parameters can also be viewed.
+We can see that the Memory Management is automatic, but we could change it to manual, if need be.
 
+There is a tab for the SGA
 
+![StartStop](../assets/Oracle_start_stop/14.png)
+
+And another one for the PGA.
+
+![StartStop](../assets/Oracle_start_stop/15.png)
+
+Dedicate some time to see the different options in this screens and how you should make changes to the allocated memory for SGA and PGA.
+
+## Initialization parameters
+
+Initialization parameters can also be viewed. Go to "Server" and then to "Initialization Parameters".
+
+![StartStop](../assets/Oracle_start_stop/16.png)
 
 The parameters can be modified, and some of these, the dynamic ones, the modification will immediately take effect. But the modification of the non-dynamic ones will not take effect until the instance is restarted. In these cases, when the Apply button is pressed, an attempt is made to stop and restart it.
 
-And we must not forget to save the parameters file if we want the changes made to take effect the next day. Then it would be convenient to arrlaunch next time without using the SPFile.
+And we must not forget to save the parameters file if we want the changes made to take effect if we restart the database.
 
-Session management
-You can also manage the sessions connected to the instance, to see the characteristics of the session and even to close them if they are not wanted. Among other things, it tells us the connected users, as which user of the Operating System they have authenticated, the name of the machine from which they have connected and through which program.
+## Session management
 
-In the image you can see how there were 3 connections, apart from processes of the same system.
+You can also manage the sessions connected to the instance, to see the characteristics of the session and even to close them if we want. Among other things, it tells us the connected users, as which user of the Operating System they have authenticated, the name of the machine from which they have connected and through which program.
 
-The SYS user has connected from the same server machine (VWindows2003) and having entered as the Operating System Administrator user. The program used is called jrew.exe. It is the Oracle console connection itself.
-The SCOTT user has connected from the same server machine (VWindows2003) and having entered as the Operating System Administrator user. The program used is sqlplusw.exe (it's SQL*Plus, obviously).
-The user SCOTT, has also connected from the other machine (my real machine) and having entered as user ?lvar (Àlvar). The program used is TOAD.
+To see the stablished connections go to "Performance" tab and then to "Search sessions"
+
+![StartStop](../assets/Oracle_start_stop/17.png)
+
+We can specify search criteria if we are looking for specific sessions, but if we just want to see all of them, just clic on `Go`.
+
+![StartStop](../assets/Oracle_start_stop/18.png)
+
+In the image you can see a SCOTT session made using SQL Developer, apart from system processes.
+
+![StartStop](../assets/Oracle_start_stop/19.png)
+
+Also, the SYS and SYSTEM users have connected from the same server machine.
+
+To disconnect the SCOTT user we just have to select the sessioin and press `Kill session`.
+
+![StartStop](../assets/Oracle_start_stop/20.png)
+
+The disconnection can be immediate (rolls back the transactions in progress) or post-transaction (waits to confirm or revoke the transaction in progress and then closes it).
+
+![StartStop](../assets/Oracle_start_stop/21.png) 
+
+Notice how after closing this session, nothing can be done from the SYSTEM session.
+
+![StartStop](../assets/Oracle_start_stop/22.png)
 
 
-In the next image we are going to disconnect the SCOTT user from the SQL*Plus session. We just have to press the right button on the session we want to "kill".
+# LINE MODE (SYS user)
 
+Just in case we do not have access to OEM, it could be a good idea to learn how to make all these basic actions from a command line program, such as SQL*PLUS.
 
+First, log in as SYSDBA.
 
-The disconnection can be immediate (rolls back the transactions in progress) or post-transaction (waits to confirm or revoke the transaction in progress and then closes it). Notice how after closing this session, nothing can be done from SQL*Plus anymore (and it says so very graphically).
+![StartStop](../assets/Oracle_start_stop/23.png)
 
+## Shutdown
 
-Started
-In the General tab, when the Database is selected, choose the Started, Mounted or Open options to get to the first, second or third step, respectively (with the Mostrar todos los estados option activated).
- 
-
- 
-
-LINE MODE (SYS user)
-Started
-Giving the STARTUP command. If we wanted to start in three steps:
-
-STARTUP NOMOUNT;
-ALTER DATABASE MOUNT;
-ALTER DATABASE OPEN;
-Or in two:
-
-STARTUP MOUNT;
-ALTER DATABASE OPEN;
-stop
 Give the SHUTDOWN command.
 
 The parameters can be set: NORMAL (default), TRANSACTIONAL, IMMEDIATE or ABORT.
 
-Initialized parameters
+![StartStop](../assets/Oracle_start_stop/24.png)
+
+## Start
+
+Give the STARTUP command. If we wanted to start in three steps:
+
+STARTUP NOMOUNT;
+ALTER DATABASE MOUNT;
+ALTER DATABASE OPEN;
+
+![StartStop](../assets/Oracle_start_stop/25.png)
+
+Or in two:
+
+STARTUP MOUNT;
+ALTER DATABASE OPEN;
+
+![StartStop](../assets/Oracle_start_stop/26.png)
+
+## Initialized parameters
+
 To be able to see the list of initialized parameters, we will issue the SHOW PARAMETERS command.
 
-If we want to modify a parameter without stopping the B.D., we will have to use the ALTER DATABASE statement, but it does not work with all parameters.
+If we want to modify a parameter without stopping the database, we will have to use the ALTER DATABASE statement, but it does not work with all parameters.
 
 If we want to modify any parameter, the simplest and most foolproof way is the one mentioned before: modify an INIT.ORA file, stop the instance and start it again.
 
-Sessions
+## Sessions
 To control the sessions, more specifically, to terminate them, it would be done by means of the ALTER SYSTEM KILL SESSION command, followed by the session number. We can find this out by consulting a view called V$SESSION, accessible only to administrators (for example SYS):
 
+![StartStop](../assets/Oracle_start_stop/27.png)
 
-If we assume that these are the sessions in progress, and we want to close the session of the user SCOTT, we would do it with the sentence you have at the end of the image:
-ALTER SYSTEM KILL SESSION '12.42';
-Before closing the session, a Rollback will automatically be made, leaving any ongoing transactions without effect. If we don't want to be so drastic, we can do:
+If we assume that these are the sessions in progress, and we want to close the session of the user SCOTT, we would do it with the sentence 
 
-ALTER SYSTEM DISCONNECT SESSION '12,42' POST_TRANSACTION;
+`ALTER SYSTEM KILL SESSION '22,39';`
+
+Before closing the session, a Rollback will automatically be made, leaving any ongoing transactions without effect. 
+
+![StartStop](../assets/Oracle_start_stop/28.png)
+
+If we don't want to be so drastic, we can do:
+
+`ALTER SYSTEM KILL SESSION '22,39' POST_TRANSACTION;`
+
 The system will then wait for the user to confirm (or reverse) the transaction, and then disconnect the user.
