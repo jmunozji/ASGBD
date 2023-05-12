@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Unit 2. Oracle basic administration."
+title:  "Unit 2. Oracle other basic administration tasks."
 date:   2023-05-12 12:00:00 +0100
 categories: Unit2
 permalink: /:categories/:title.html
