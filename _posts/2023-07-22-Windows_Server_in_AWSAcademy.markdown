@@ -100,6 +100,11 @@ It is a good practice to create a text document and copy there all the informati
 
 We can now use a Remote Desktop software to make the connection. In lliurex we have KRDC and Remmina. We could also use Windows Remote Desktop in Windows or Mac.
 
+Before yo connect to the server, just remember you have to finish the lab each time you finish working. Just go to the AWS Academy console and press "End Lab". If you don't do it the lab will be automatically closed after 4h.
+
+![WindowsServerInstallationAWS](../assets/Windows_Server_in_AWSAcademy/24.png)
+
+
 ## Connection using KRDC
 
 In the following images we can see how to use KRDC to make the connection.
