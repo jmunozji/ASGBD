@@ -120,7 +120,7 @@ It will then ask for the user and password.
 
 And the connection will be stablished.
 
-![WindowsServerInstallation](../assets/Windows_Server_in_Azure/18_1.png)
+![WindowsServerInstallationAWS](../assets/Windows_Server_in_AWSAcademy/23.png)
 
 ## Connection using Microsoft Remote Desktop
 
