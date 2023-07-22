@@ -7,7 +7,7 @@ permalink: /:categories/:title.html
 ---
 # Windows Server in AWS Academy
 
-In this note we will see how to create a Windows Server 2012. We will use that machine to install our Oracle Database afterwards.
+In this note we will see how to create a Windows Server. We will use that machine to install our Oracle Database afterwards.
 
 First, we have to access the [AWS Academy portal](https://www.awsacademy.com/vforcesite/LMS_Login) using our AWS Academy Account.
 
@@ -104,7 +104,7 @@ We can now use a Remote Desktop software to make the connection. In lliurex we h
 
 In the following images we can see how to use KRDC to make the connection.
 
-Just select protocol RDP and the public IP address.
+Just select protocol RDP and the public DNS (instead of the IP shown in the image).
 
 ![WindowsServerInstallation](../assets/Windows_Server_in_Azure/19.png)
 
